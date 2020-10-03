@@ -1,0 +1,752 @@
+No.     Time           Source                Destination           Protocol Length Info
+     17 1.444775684    192.168.1.142         128.119.245.12        HTTP     521    GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1 
+
+Frame 17: 521 bytes on wire (4168 bits), 521 bytes captured (4168 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:51:34.965108935 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584886894.965108935 seconds
+    [Time delta from previous captured frame: 0.000598114 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 1.444775684 seconds]
+    Frame Number: 17
+    Frame Length: 521 bytes (4168 bits)
+    Capture Length: 521 bytes (4168 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef), Dst: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+    Destination: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.142, Dst: 128.119.245.12
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 507
+    Identification: 0x7702 (30466)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0x8a40 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.1.142
+    Destination: 128.119.245.12
+Transmission Control Protocol, Src Port: 57338, Dst Port: 80, Seq: 1, Ack: 1, Len: 455
+    Source Port: 57338
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 455]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 456    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 502
+    [Calculated window size: 64256]
+    [Window size scaling factor: 128]
+    Checksum: 0x91da [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 2245988950, TSecr 284421282
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 2245988950
+            Timestamp echo reply: 284421282
+    [SEQ/ACK analysis]
+        [iRTT: 0.323900444 seconds]
+        [Bytes in flight: 455]
+        [Bytes sent since last PSH flag: 455]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.324498558 seconds]
+        [Time since previous frame in this TCP stream: 0.000598114 seconds]
+    TCP payload (455 bytes)
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file3.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: en-US,en;q=0.9\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html]
+    [HTTP request 1/1]
+    [Response in frame: 27]
+TRANSUM RTE Data
+    [RTE Status: OK]
+    [Req First Seg: 17]
+    [Req Last Seg: 17]
+    [Rsp First Seg: 23]
+    [Rsp Last Seg: 27]
+    [APDU Rsp Time: 0.330158677 seconds]
+    [Service Time: 0.328965849 seconds]
+    [Req Spread: 0.000000000 seconds]
+    [Rsp Spread: 0.001192828 seconds]
+    [Trace clip filter: tcp.stream==1 && frame.number>=17 && frame.number<=27 && tcp.len>0]
+    [Calculation: Generic TCP]
+
+0000  50 64 2b 4e b1 6b 7c 67 a2 54 ac ef 08 00 45 00   Pd+N.k|g.T....E.
+0010  01 fb 77 02 40 00 40 06 8a 40 c0 a8 01 8e 80 77   ..w.@.@..@.....w
+0020  f5 0c df fa 00 50 8b c3 f1 fe 93 e7 36 6b 80 18   .....P......6k..
+0030  01 f6 91 da 00 00 01 01 08 0a 85 df 12 56 10 f3   .............V..
+0040  ec a2 47 45 54 20 2f 77 69 72 65 73 68 61 72 6b   ..GET /wireshark
+0050  2d 6c 61 62 73 2f 48 54 54 50 2d 77 69 72 65 73   -labs/HTTP-wires
+0060  68 61 72 6b 2d 66 69 6c 65 33 2e 68 74 6d 6c 20   hark-file3.html 
+0070  48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20   HTTP/1.1..Host: 
+0080  67 61 69 61 2e 63 73 2e 75 6d 61 73 73 2e 65 64   gaia.cs.umass.ed
+0090  75 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 6b   u..Connection: k
+00a0  65 65 70 2d 61 6c 69 76 65 0d 0a 55 70 67 72 61   eep-alive..Upgra
+00b0  64 65 2d 49 6e 73 65 63 75 72 65 2d 52 65 71 75   de-Insecure-Requ
+00c0  65 73 74 73 3a 20 31 0d 0a 55 73 65 72 2d 41 67   ests: 1..User-Ag
+00d0  65 6e 74 3a 20 4d 6f 7a 69 6c 6c 61 2f 35 2e 30   ent: Mozilla/5.0
+00e0  20 28 58 31 31 3b 20 4c 69 6e 75 78 20 78 38 36    (X11; Linux x86
+00f0  5f 36 34 29 20 41 70 70 6c 65 57 65 62 4b 69 74   _64) AppleWebKit
+0100  2f 35 33 37 2e 33 36 20 28 4b 48 54 4d 4c 2c 20   /537.36 (KHTML, 
+0110  6c 69 6b 65 20 47 65 63 6b 6f 29 20 43 68 72 6f   like Gecko) Chro
+0120  6d 65 2f 38 30 2e 30 2e 33 39 38 37 2e 31 34 39   me/80.0.3987.149
+0130  20 53 61 66 61 72 69 2f 35 33 37 2e 33 36 0d 0a    Safari/537.36..
+0140  41 63 63 65 70 74 3a 20 74 65 78 74 2f 68 74 6d   Accept: text/htm
+0150  6c 2c 61 70 70 6c 69 63 61 74 69 6f 6e 2f 78 68   l,application/xh
+0160  74 6d 6c 2b 78 6d 6c 2c 61 70 70 6c 69 63 61 74   tml+xml,applicat
+0170  69 6f 6e 2f 78 6d 6c 3b 71 3d 30 2e 39 2c 69 6d   ion/xml;q=0.9,im
+0180  61 67 65 2f 77 65 62 70 2c 69 6d 61 67 65 2f 61   age/webp,image/a
+0190  70 6e 67 2c 2a 2f 2a 3b 71 3d 30 2e 38 2c 61 70   png,*/*;q=0.8,ap
+01a0  70 6c 69 63 61 74 69 6f 6e 2f 73 69 67 6e 65 64   plication/signed
+01b0  2d 65 78 63 68 61 6e 67 65 3b 76 3d 62 33 3b 71   -exchange;v=b3;q
+01c0  3d 30 2e 39 0d 0a 41 63 63 65 70 74 2d 45 6e 63   =0.9..Accept-Enc
+01d0  6f 64 69 6e 67 3a 20 67 7a 69 70 2c 20 64 65 66   oding: gzip, def
+01e0  6c 61 74 65 0d 0a 41 63 63 65 70 74 2d 4c 61 6e   late..Accept-Lan
+01f0  67 75 61 67 65 3a 20 65 6e 2d 55 53 2c 65 6e 3b   guage: en-US,en;
+0200  71 3d 30 2e 39 0d 0a 0d 0a                        q=0.9....
+No.     Time           Source                Destination           Protocol Length Info
+     27 1.774934361    128.119.245.12        192.168.1.142         HTTP     883    HTTP/1.1 200 OK  (text/html)
+
+Frame 27: 883 bytes on wire (7064 bits), 883 bytes captured (7064 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:51:35.295267612 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584886895.295267612 seconds
+    [Time delta from previous captured frame: 0.000572173 seconds]
+    [Time delta from previous displayed frame: 0.330158677 seconds]
+    [Time since reference or first frame: 1.774934361 seconds]
+    Frame Number: 27
+    Frame Length: 883 bytes (7064 bits)
+    Capture Length: 883 bytes (7064 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:data-text-lines]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b), Dst: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+    Destination: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.142
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 869
+    Identification: 0xdb90 (56208)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 48
+    Protocol: TCP (6)
+    Header checksum: 0x3448 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 128.119.245.12
+    Destination: 192.168.1.142
+Transmission Control Protocol, Src Port: 80, Dst Port: 57338, Seq: 4045, Ack: 456, Len: 817
+    Source Port: 80
+    Destination Port: 57338
+    [Stream index: 1]
+    [TCP Segment Len: 817]
+    Sequence number: 4045    (relative sequence number)
+    [Next sequence number: 4862    (relative sequence number)]
+    Acknowledgment number: 456    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0xe1f3 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 284421613, TSecr 2245988950
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 284421613
+            Timestamp echo reply: 2245988950
+    [SEQ/ACK analysis]
+        [iRTT: 0.323900444 seconds]
+        [Bytes in flight: 817]
+        [Bytes sent since last PSH flag: 4861]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.654657235 seconds]
+        [Time since previous frame in this TCP stream: 0.000572173 seconds]
+    TCP payload (817 bytes)
+    TCP segment data (817 bytes)
+[3 Reassembled TCP Segments (4861 bytes): #23(1348), #25(2696), #27(817)]
+    [Frame: 23, payload: 0-1347 (1348 bytes)]
+    [Frame: 25, payload: 1348-4043 (2696 bytes)]
+    [Frame: 27, payload: 4044-4860 (817 bytes)]
+    [Segment count: 3]
+    [Reassembled TCP length: 4861]
+    [Reassembled TCP Data: 485454502f312e3120323030204f4b0d0a446174653a2053...]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+            [HTTP/1.1 200 OK\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Response Version: HTTP/1.1
+        Status Code: 200
+        [Status Code Description: OK]
+        Response Phrase: OK
+    Date: Sun, 22 Mar 2020 14:21:35 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 mod_perl/2.0.11 Perl/v5.16.3\r\n
+    Last-Modified: Sun, 22 Mar 2020 05:59:02 GMT\r\n
+    ETag: "1194-5a16b37285865"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 4500\r\n
+        [Content length: 4500]
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.330158677 seconds]
+    [Request in frame: 17]
+    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html]
+    File Data: 4500 bytes
+Line-based text data: text/html (98 lines)
+    <html><head> \n
+    <title>Historical Documents:THE BILL OF RIGHTS</title></head>\n
+    \n
+    \n
+    <body bgcolor="#ffffff" link="#330000" vlink="#666633">\n
+    <p><br>\n
+    </p>\n
+    <p></p><center><b>THE BILL OF RIGHTS</b><br>\n
+      <em>Amendments 1-10 of the Constitution</em>\n
+    </center>\n
+    \n
+    <p>The Conventions of a number of the States having, at the time of adopting\n
+    the Constitution, expressed a desire, in order to prevent misconstruction\n
+    or abuse of its powers, that further declaratory and restrictive clauses\n
+    should be added, and as extending the ground of public confidence in the\n
+    Government will best insure the beneficent ends of its institution; </p><p>  Resolved, by the Senate and House of Representatives of the United\n
+    States of America, in Congress assembled, two-thirds of both Houses concurring,\n
+    that the following articles be proposed to the Legislatures of the several\n
+    States, as amendments to the Constitution of the United States; all or any\n
+    of which articles, when ratified by three-fourths of the said Legislatures,\n
+    to be valid to all intents and purposes as part of the said Constitution,\n
+    namely:    </p><p><a name="1"><strong><h3>Amendment I</h3></strong></a>\n
+    \n
+    <p></p><p>Congress shall make no law respecting an establishment of\n
+    religion, or prohibiting the free exercise thereof; or\n
+    abridging the freedom of speech, or of the press; or the\n
+    right of the people peaceably to assemble, and to petition\n
+    the government for a redress of grievances.\n
+    \n
+    </p><p><a name="2"><strong><h3>Amendment II</h3></strong></a>\n
+    \n
+    <p></p><p>A well regulated militia, being necessary to the security\n
+    of a free state, the right of the people to keep and bear\n
+    arms, shall not be infringed.\n
+    \n
+    </p><p><a name="3"><strong><h3>Amendment III</h3></strong></a>\n
+    \n
+    <p></p><p>No soldier shall, in time of peace be quartered in any house,\n
+    without the consent of the owner, nor in time of war, but\n
+    in a manner to be prescribed by law.\n
+    \n
+    </p><p><a name="4"><strong><h3>Amendment IV</h3></strong></a>\n
+    \n
+    <p></p><p>The right of the people to be secure in their persons, houses,\n
+    papers, and effects, against unreasonable searches and seizures,\n
+    shall not be violated, and no warrants shall issue, but upon\n
+    probable cause, supported by oath or affirmation, and\n
+    particularly describing the place to be searched, and the\n
+    persons or things to be seized.\n
+    \n
+    </p><p><a name="5"><strong><h3>Amendment V</h3></strong></a>\n
+    \n
+    <p></p><p>No person shall be held to answer for a capital, or otherwise\n
+    infamous crime, unless on a presentment or indictment of a grand\n
+    jury, except in cases arising in the land or naval forces,\n
+    or in the militia, when in actual service in time of war\n
+    or public danger; nor shall any person be subject for the\n
+    same offense to be twice put in jeopardy of life or limb;\n
+    nor shall be compelled in any criminal case to be a witness\n
+    against himself, nor be deprived of life, liberty, or property,\n
+    without due process of law; nor shall private property be\n
+    taken for public use, without just compensation.\n
+    \n
+    </p><p><a name="6"><strong><h3>Amendment VI</h3></strong></a>\n
+    \n
+    <p></p><p>In all criminal prosecutions, the accused shall enjoy the right\n
+    to a speedy and public trial, by an impartial jury of the state\n
+    and district wherein the crime shall have been committed, which\n
+    district shall have been previously ascertained by law, and\n
+    to be informed of the nature and cause of the accusation;\n
+    to be confronted with the witnesses against him; to have\n
+    compulsory process for obtaining witnesses in his favor,\n
+    and to have the assistance of counsel for his defense.\n
+    \n
+    </p><p><a name="7"><strong><h3>Amendment VII</h3></strong></a>\n
+    \n
+    <p></p><p>In suits at common law, where the value in controversy shall\n
+    exceed twenty dollars, the right of trial by jury shall be\n
+    preserved, and no fact tried by a jury, shall be otherwise\n
+    reexamined in any court of the United States, than according\n
+    to the rules of the common law.\n
+    \n
+    </p><p><a name="8"><strong><h3>Amendment VIII</h3></strong></a>\n
+    \n
+    <p></p><p>Excessive bail shall not be required, nor excessive fines\n
+    imposed, nor cruel and unusual punishments inflicted.\n
+    \n
+    </p><p><a name="9"><strong><h3>Amendment IX</h3></strong></a>\n
+    \n
+    <p></p><p>The enumeration in the Constitution, of certain rights, shall\n
+    not be construed to deny or disparage others retained by the people.\n
+    \n
+    </p><p><a name="10"><strong><h3>Amendment X</h3></strong></a>\n
+    \n
+    <p></p>\n
+    <p>The powers not delegated to the United States by the Constitution, nor prohibited \n
+      by it to the states, are reserved to the states respectively, or to the people.</p>\n
+    </body></html>
+
+Frame (883 bytes):
+0000  7c 67 a2 54 ac ef 50 64 2b 4e b1 6b 08 00 45 00   |g.T..Pd+N.k..E.
+0010  03 65 db 90 40 00 30 06 34 48 80 77 f5 0c c0 a8   .e..@.0.4H.w....
+0020  01 8e 00 50 df fa 93 e7 46 37 8b c3 f3 c5 80 18   ...P....F7......
+0030  00 eb e1 f3 00 00 01 01 08 0a 10 f3 ed ed 85 df   ................
+0040  12 56 6a 75 72 79 20 73 68 61 6c 6c 20 62 65 0a   .Vjury shall be.
+0050  70 72 65 73 65 72 76 65 64 2c 20 61 6e 64 20 6e   preserved, and n
+0060  6f 20 66 61 63 74 20 74 72 69 65 64 20 62 79 20   o fact tried by 
+0070  61 20 6a 75 72 79 2c 20 73 68 61 6c 6c 20 62 65   a jury, shall be
+0080  20 6f 74 68 65 72 77 69 73 65 0a 72 65 65 78 61    otherwise.reexa
+0090  6d 69 6e 65 64 20 69 6e 20 61 6e 79 20 63 6f 75   mined in any cou
+00a0  72 74 20 6f 66 20 74 68 65 20 55 6e 69 74 65 64   rt of the United
+00b0  20 53 74 61 74 65 73 2c 20 74 68 61 6e 20 61 63    States, than ac
+00c0  63 6f 72 64 69 6e 67 0a 74 6f 20 74 68 65 20 72   cording.to the r
+00d0  75 6c 65 73 20 6f 66 20 74 68 65 20 63 6f 6d 6d   ules of the comm
+00e0  6f 6e 20 6c 61 77 2e 0a 0a 3c 2f 70 3e 3c 70 3e   on law...</p><p>
+00f0  3c 61 20 6e 61 6d 65 3d 22 38 22 3e 3c 73 74 72   <a name="8"><str
+0100  6f 6e 67 3e 3c 68 33 3e 41 6d 65 6e 64 6d 65 6e   ong><h3>Amendmen
+0110  74 20 56 49 49 49 3c 2f 68 33 3e 3c 2f 73 74 72   t VIII</h3></str
+0120  6f 6e 67 3e 3c 2f 61 3e 0a 0a 3c 70 3e 3c 2f 70   ong></a>..<p></p
+0130  3e 3c 70 3e 45 78 63 65 73 73 69 76 65 20 62 61   ><p>Excessive ba
+0140  69 6c 20 73 68 61 6c 6c 20 6e 6f 74 20 62 65 20   il shall not be 
+0150  72 65 71 75 69 72 65 64 2c 20 6e 6f 72 20 65 78   required, nor ex
+0160  63 65 73 73 69 76 65 20 66 69 6e 65 73 0a 69 6d   cessive fines.im
+0170  70 6f 73 65 64 2c 20 6e 6f 72 20 63 72 75 65 6c   posed, nor cruel
+0180  20 61 6e 64 20 75 6e 75 73 75 61 6c 20 70 75 6e    and unusual pun
+0190  69 73 68 6d 65 6e 74 73 20 69 6e 66 6c 69 63 74   ishments inflict
+01a0  65 64 2e 0a 0a 3c 2f 70 3e 3c 70 3e 3c 61 20 6e   ed...</p><p><a n
+01b0  61 6d 65 3d 22 39 22 3e 3c 73 74 72 6f 6e 67 3e   ame="9"><strong>
+01c0  3c 68 33 3e 41 6d 65 6e 64 6d 65 6e 74 20 49 58   <h3>Amendment IX
+01d0  3c 2f 68 33 3e 3c 2f 73 74 72 6f 6e 67 3e 3c 2f   </h3></strong></
+01e0  61 3e 0a 0a 3c 70 3e 3c 2f 70 3e 3c 70 3e 54 68   a>..<p></p><p>Th
+01f0  65 20 65 6e 75 6d 65 72 61 74 69 6f 6e 20 69 6e   e enumeration in
+0200  20 74 68 65 20 43 6f 6e 73 74 69 74 75 74 69 6f    the Constitutio
+0210  6e 2c 20 6f 66 20 63 65 72 74 61 69 6e 20 72 69   n, of certain ri
+0220  67 68 74 73 2c 20 73 68 61 6c 6c 0a 6e 6f 74 20   ghts, shall.not 
+0230  62 65 20 63 6f 6e 73 74 72 75 65 64 20 74 6f 20   be construed to 
+0240  64 65 6e 79 20 6f 72 20 64 69 73 70 61 72 61 67   deny or disparag
+0250  65 20 6f 74 68 65 72 73 20 72 65 74 61 69 6e 65   e others retaine
+0260  64 20 62 79 20 74 68 65 20 70 65 6f 70 6c 65 2e   d by the people.
+0270  0a 0a 3c 2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d 65   ..</p><p><a name
+0280  3d 22 31 30 22 3e 3c 73 74 72 6f 6e 67 3e 3c 68   ="10"><strong><h
+0290  33 3e 41 6d 65 6e 64 6d 65 6e 74 20 58 3c 2f 68   3>Amendment X</h
+02a0  33 3e 3c 2f 73 74 72 6f 6e 67 3e 3c 2f 61 3e 0a   3></strong></a>.
+02b0  0a 3c 70 3e 3c 2f 70 3e 0a 3c 70 3e 54 68 65 20   .<p></p>.<p>The 
+02c0  70 6f 77 65 72 73 20 6e 6f 74 20 64 65 6c 65 67   powers not deleg
+02d0  61 74 65 64 20 74 6f 20 74 68 65 20 55 6e 69 74   ated to the Unit
+02e0  65 64 20 53 74 61 74 65 73 20 62 79 20 74 68 65   ed States by the
+02f0  20 43 6f 6e 73 74 69 74 75 74 69 6f 6e 2c 20 6e    Constitution, n
+0300  6f 72 20 70 72 6f 68 69 62 69 74 65 64 20 0a 20   or prohibited . 
+0310  20 62 79 20 69 74 20 74 6f 20 74 68 65 20 73 74    by it to the st
+0320  61 74 65 73 2c 20 61 72 65 20 72 65 73 65 72 76   ates, are reserv
+0330  65 64 20 74 6f 20 74 68 65 20 73 74 61 74 65 73   ed to the states
+0340  20 72 65 73 70 65 63 74 69 76 65 6c 79 2c 20 6f    respectively, o
+0350  72 20 74 6f 20 74 68 65 20 70 65 6f 70 6c 65 2e   r to the people.
+0360  3c 2f 70 3e 0a 3c 2f 62 6f 64 79 3e 3c 2f 68 74   </p>.</body></ht
+0370  6d 6c 3e                                          ml>
+Reassembled TCP (4861 bytes):
+0000  48 54 54 50 2f 31 2e 31 20 32 30 30 20 4f 4b 0d   HTTP/1.1 200 OK.
+0010  0a 44 61 74 65 3a 20 53 75 6e 2c 20 32 32 20 4d   .Date: Sun, 22 M
+0020  61 72 20 32 30 32 30 20 31 34 3a 32 31 3a 33 35   ar 2020 14:21:35
+0030  20 47 4d 54 0d 0a 53 65 72 76 65 72 3a 20 41 70    GMT..Server: Ap
+0040  61 63 68 65 2f 32 2e 34 2e 36 20 28 43 65 6e 74   ache/2.4.6 (Cent
+0050  4f 53 29 20 4f 70 65 6e 53 53 4c 2f 31 2e 30 2e   OS) OpenSSL/1.0.
+0060  32 6b 2d 66 69 70 73 20 50 48 50 2f 35 2e 34 2e   2k-fips PHP/5.4.
+0070  31 36 20 6d 6f 64 5f 70 65 72 6c 2f 32 2e 30 2e   16 mod_perl/2.0.
+0080  31 31 20 50 65 72 6c 2f 76 35 2e 31 36 2e 33 0d   11 Perl/v5.16.3.
+0090  0a 4c 61 73 74 2d 4d 6f 64 69 66 69 65 64 3a 20   .Last-Modified: 
+00a0  53 75 6e 2c 20 32 32 20 4d 61 72 20 32 30 32 30   Sun, 22 Mar 2020
+00b0  20 30 35 3a 35 39 3a 30 32 20 47 4d 54 0d 0a 45    05:59:02 GMT..E
+00c0  54 61 67 3a 20 22 31 31 39 34 2d 35 61 31 36 62   Tag: "1194-5a16b
+00d0  33 37 32 38 35 38 36 35 22 0d 0a 41 63 63 65 70   37285865"..Accep
+00e0  74 2d 52 61 6e 67 65 73 3a 20 62 79 74 65 73 0d   t-Ranges: bytes.
+00f0  0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74 68 3a   .Content-Length:
+0100  20 34 35 30 30 0d 0a 4b 65 65 70 2d 41 6c 69 76    4500..Keep-Aliv
+0110  65 3a 20 74 69 6d 65 6f 75 74 3d 35 2c 20 6d 61   e: timeout=5, ma
+0120  78 3d 31 30 30 0d 0a 43 6f 6e 6e 65 63 74 69 6f   x=100..Connectio
+0130  6e 3a 20 4b 65 65 70 2d 41 6c 69 76 65 0d 0a 43   n: Keep-Alive..C
+0140  6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 74 65 78   ontent-Type: tex
+0150  74 2f 68 74 6d 6c 3b 20 63 68 61 72 73 65 74 3d   t/html; charset=
+0160  55 54 46 2d 38 0d 0a 0d 0a 3c 68 74 6d 6c 3e 3c   UTF-8....<html><
+0170  68 65 61 64 3e 20 0a 3c 74 69 74 6c 65 3e 48 69   head> .<title>Hi
+0180  73 74 6f 72 69 63 61 6c 20 44 6f 63 75 6d 65 6e   storical Documen
+0190  74 73 3a 54 48 45 20 42 49 4c 4c 20 4f 46 20 52   ts:THE BILL OF R
+01a0  49 47 48 54 53 3c 2f 74 69 74 6c 65 3e 3c 2f 68   IGHTS</title></h
+01b0  65 61 64 3e 0a 0a 0a 3c 62 6f 64 79 20 62 67 63   ead>...<body bgc
+01c0  6f 6c 6f 72 3d 22 23 66 66 66 66 66 66 22 20 6c   olor="#ffffff" l
+01d0  69 6e 6b 3d 22 23 33 33 30 30 30 30 22 20 76 6c   ink="#330000" vl
+01e0  69 6e 6b 3d 22 23 36 36 36 36 33 33 22 3e 0a 3c   ink="#666633">.<
+01f0  70 3e 3c 62 72 3e 0a 3c 2f 70 3e 0a 3c 70 3e 3c   p><br>.</p>.<p><
+0200  2f 70 3e 3c 63 65 6e 74 65 72 3e 3c 62 3e 54 48   /p><center><b>TH
+0210  45 20 42 49 4c 4c 20 4f 46 20 52 49 47 48 54 53   E BILL OF RIGHTS
+0220  3c 2f 62 3e 3c 62 72 3e 0a 20 20 3c 65 6d 3e 41   </b><br>.  <em>A
+0230  6d 65 6e 64 6d 65 6e 74 73 20 31 2d 31 30 20 6f   mendments 1-10 o
+0240  66 20 74 68 65 20 43 6f 6e 73 74 69 74 75 74 69   f the Constituti
+0250  6f 6e 3c 2f 65 6d 3e 0a 3c 2f 63 65 6e 74 65 72   on</em>.</center
+0260  3e 0a 0a 3c 70 3e 54 68 65 20 43 6f 6e 76 65 6e   >..<p>The Conven
+0270  74 69 6f 6e 73 20 6f 66 20 61 20 6e 75 6d 62 65   tions of a numbe
+0280  72 20 6f 66 20 74 68 65 20 53 74 61 74 65 73 20   r of the States 
+0290  68 61 76 69 6e 67 2c 20 61 74 20 74 68 65 20 74   having, at the t
+02a0  69 6d 65 20 6f 66 20 61 64 6f 70 74 69 6e 67 0a   ime of adopting.
+02b0  74 68 65 20 43 6f 6e 73 74 69 74 75 74 69 6f 6e   the Constitution
+02c0  2c 20 65 78 70 72 65 73 73 65 64 20 61 20 64 65   , expressed a de
+02d0  73 69 72 65 2c 20 69 6e 20 6f 72 64 65 72 20 74   sire, in order t
+02e0  6f 20 70 72 65 76 65 6e 74 20 6d 69 73 63 6f 6e   o prevent miscon
+02f0  73 74 72 75 63 74 69 6f 6e 0a 6f 72 20 61 62 75   struction.or abu
+0300  73 65 20 6f 66 20 69 74 73 20 70 6f 77 65 72 73   se of its powers
+0310  2c 20 74 68 61 74 20 66 75 72 74 68 65 72 20 64   , that further d
+0320  65 63 6c 61 72 61 74 6f 72 79 20 61 6e 64 20 72   eclaratory and r
+0330  65 73 74 72 69 63 74 69 76 65 20 63 6c 61 75 73   estrictive claus
+0340  65 73 0a 73 68 6f 75 6c 64 20 62 65 20 61 64 64   es.should be add
+0350  65 64 2c 20 61 6e 64 20 61 73 20 65 78 74 65 6e   ed, and as exten
+0360  64 69 6e 67 20 74 68 65 20 67 72 6f 75 6e 64 20   ding the ground 
+0370  6f 66 20 70 75 62 6c 69 63 20 63 6f 6e 66 69 64   of public confid
+0380  65 6e 63 65 20 69 6e 20 74 68 65 0a 47 6f 76 65   ence in the.Gove
+0390  72 6e 6d 65 6e 74 20 77 69 6c 6c 20 62 65 73 74   rnment will best
+03a0  20 69 6e 73 75 72 65 20 74 68 65 20 62 65 6e 65    insure the bene
+03b0  66 69 63 65 6e 74 20 65 6e 64 73 20 6f 66 20 69   ficent ends of i
+03c0  74 73 20 69 6e 73 74 69 74 75 74 69 6f 6e 3b 20   ts institution; 
+03d0  3c 2f 70 3e 3c 70 3e 20 20 52 65 73 6f 6c 76 65   </p><p>  Resolve
+03e0  64 2c 20 62 79 20 74 68 65 20 53 65 6e 61 74 65   d, by the Senate
+03f0  20 61 6e 64 20 48 6f 75 73 65 20 6f 66 20 52 65    and House of Re
+0400  70 72 65 73 65 6e 74 61 74 69 76 65 73 20 6f 66   presentatives of
+0410  20 74 68 65 20 55 6e 69 74 65 64 0a 53 74 61 74    the United.Stat
+0420  65 73 20 6f 66 20 41 6d 65 72 69 63 61 2c 20 69   es of America, i
+0430  6e 20 43 6f 6e 67 72 65 73 73 20 61 73 73 65 6d   n Congress assem
+0440  62 6c 65 64 2c 20 74 77 6f 2d 74 68 69 72 64 73   bled, two-thirds
+0450  20 6f 66 20 62 6f 74 68 20 48 6f 75 73 65 73 20    of both Houses 
+0460  63 6f 6e 63 75 72 72 69 6e 67 2c 0a 74 68 61 74   concurring,.that
+0470  20 74 68 65 20 66 6f 6c 6c 6f 77 69 6e 67 20 61    the following a
+0480  72 74 69 63 6c 65 73 20 62 65 20 70 72 6f 70 6f   rticles be propo
+0490  73 65 64 20 74 6f 20 74 68 65 20 4c 65 67 69 73   sed to the Legis
+04a0  6c 61 74 75 72 65 73 20 6f 66 20 74 68 65 20 73   latures of the s
+04b0  65 76 65 72 61 6c 0a 53 74 61 74 65 73 2c 20 61   everal.States, a
+04c0  73 20 61 6d 65 6e 64 6d 65 6e 74 73 20 74 6f 20   s amendments to 
+04d0  74 68 65 20 43 6f 6e 73 74 69 74 75 74 69 6f 6e   the Constitution
+04e0  20 6f 66 20 74 68 65 20 55 6e 69 74 65 64 20 53    of the United S
+04f0  74 61 74 65 73 3b 20 61 6c 6c 20 6f 72 20 61 6e   tates; all or an
+0500  79 0a 6f 66 20 77 68 69 63 68 20 61 72 74 69 63   y.of which artic
+0510  6c 65 73 2c 20 77 68 65 6e 20 72 61 74 69 66 69   les, when ratifi
+0520  65 64 20 62 79 20 74 68 72 65 65 2d 66 6f 75 72   ed by three-four
+0530  74 68 73 20 6f 66 20 74 68 65 20 73 61 69 64 20   ths of the said 
+0540  4c 65 67 69 73 6c 61 74 75 72 65 73 2c 0a 74 6f   Legislatures,.to
+0550  20 62 65 20 76 61 6c 69 64 20 74 6f 20 61 6c 6c    be valid to all
+0560  20 69 6e 74 65 6e 74 73 20 61 6e 64 20 70 75 72    intents and pur
+0570  70 6f 73 65 73 20 61 73 20 70 61 72 74 20 6f 66   poses as part of
+0580  20 74 68 65 20 73 61 69 64 20 43 6f 6e 73 74 69    the said Consti
+0590  74 75 74 69 6f 6e 2c 0a 6e 61 6d 65 6c 79 3a 20   tution,.namely: 
+05a0  20 20 20 3c 2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d      </p><p><a nam
+05b0  65 3d 22 31 22 3e 3c 73 74 72 6f 6e 67 3e 3c 68   e="1"><strong><h
+05c0  33 3e 41 6d 65 6e 64 6d 65 6e 74 20 49 3c 2f 68   3>Amendment I</h
+05d0  33 3e 3c 2f 73 74 72 6f 6e 67 3e 3c 2f 61 3e 0a   3></strong></a>.
+05e0  0a 3c 70 3e 3c 2f 70 3e 3c 70 3e 43 6f 6e 67 72   .<p></p><p>Congr
+05f0  65 73 73 20 73 68 61 6c 6c 20 6d 61 6b 65 20 6e   ess shall make n
+0600  6f 20 6c 61 77 20 72 65 73 70 65 63 74 69 6e 67   o law respecting
+0610  20 61 6e 20 65 73 74 61 62 6c 69 73 68 6d 65 6e    an establishmen
+0620  74 20 6f 66 0a 72 65 6c 69 67 69 6f 6e 2c 20 6f   t of.religion, o
+0630  72 20 70 72 6f 68 69 62 69 74 69 6e 67 20 74 68   r prohibiting th
+0640  65 20 66 72 65 65 20 65 78 65 72 63 69 73 65 20   e free exercise 
+0650  74 68 65 72 65 6f 66 3b 20 6f 72 0a 61 62 72 69   thereof; or.abri
+0660  64 67 69 6e 67 20 74 68 65 20 66 72 65 65 64 6f   dging the freedo
+0670  6d 20 6f 66 20 73 70 65 65 63 68 2c 20 6f 72 20   m of speech, or 
+0680  6f 66 20 74 68 65 20 70 72 65 73 73 3b 20 6f 72   of the press; or
+0690  20 74 68 65 0a 72 69 67 68 74 20 6f 66 20 74 68    the.right of th
+06a0  65 20 70 65 6f 70 6c 65 20 70 65 61 63 65 61 62   e people peaceab
+06b0  6c 79 20 74 6f 20 61 73 73 65 6d 62 6c 65 2c 20   ly to assemble, 
+06c0  61 6e 64 20 74 6f 20 70 65 74 69 74 69 6f 6e 0a   and to petition.
+06d0  74 68 65 20 67 6f 76 65 72 6e 6d 65 6e 74 20 66   the government f
+06e0  6f 72 20 61 20 72 65 64 72 65 73 73 20 6f 66 20   or a redress of 
+06f0  67 72 69 65 76 61 6e 63 65 73 2e 0a 0a 3c 2f 70   grievances...</p
+0700  3e 3c 70 3e 3c 61 20 6e 61 6d 65 3d 22 32 22 3e   ><p><a name="2">
+0710  3c 73 74 72 6f 6e 67 3e 3c 68 33 3e 41 6d 65 6e   <strong><h3>Amen
+0720  64 6d 65 6e 74 20 49 49 3c 2f 68 33 3e 3c 2f 73   dment II</h3></s
+0730  74 72 6f 6e 67 3e 3c 2f 61 3e 0a 0a 3c 70 3e 3c   trong></a>..<p><
+0740  2f 70 3e 3c 70 3e 41 20 77 65 6c 6c 20 72 65 67   /p><p>A well reg
+0750  75 6c 61 74 65 64 20 6d 69 6c 69 74 69 61 2c 20   ulated militia, 
+0760  62 65 69 6e 67 20 6e 65 63 65 73 73 61 72 79 20   being necessary 
+0770  74 6f 20 74 68 65 20 73 65 63 75 72 69 74 79 0a   to the security.
+0780  6f 66 20 61 20 66 72 65 65 20 73 74 61 74 65 2c   of a free state,
+0790  20 74 68 65 20 72 69 67 68 74 20 6f 66 20 74 68    the right of th
+07a0  65 20 70 65 6f 70 6c 65 20 74 6f 20 6b 65 65 70   e people to keep
+07b0  20 61 6e 64 20 62 65 61 72 0a 61 72 6d 73 2c 20    and bear.arms, 
+07c0  73 68 61 6c 6c 20 6e 6f 74 20 62 65 20 69 6e 66   shall not be inf
+07d0  72 69 6e 67 65 64 2e 0a 0a 3c 2f 70 3e 3c 70 3e   ringed...</p><p>
+07e0  3c 61 20 6e 61 6d 65 3d 22 33 22 3e 3c 73 74 72   <a name="3"><str
+07f0  6f 6e 67 3e 3c 68 33 3e 41 6d 65 6e 64 6d 65 6e   ong><h3>Amendmen
+0800  74 20 49 49 49 3c 2f 68 33 3e 3c 2f 73 74 72 6f   t III</h3></stro
+0810  6e 67 3e 3c 2f 61 3e 0a 0a 3c 70 3e 3c 2f 70 3e   ng></a>..<p></p>
+0820  3c 70 3e 4e 6f 20 73 6f 6c 64 69 65 72 20 73 68   <p>No soldier sh
+0830  61 6c 6c 2c 20 69 6e 20 74 69 6d 65 20 6f 66 20   all, in time of 
+0840  70 65 61 63 65 20 62 65 20 71 75 61 72 74 65 72   peace be quarter
+0850  65 64 20 69 6e 20 61 6e 79 20 68 6f 75 73 65 2c   ed in any house,
+0860  0a 77 69 74 68 6f 75 74 20 74 68 65 20 63 6f 6e   .without the con
+0870  73 65 6e 74 20 6f 66 20 74 68 65 20 6f 77 6e 65   sent of the owne
+0880  72 2c 20 6e 6f 72 20 69 6e 20 74 69 6d 65 20 6f   r, nor in time o
+0890  66 20 77 61 72 2c 20 62 75 74 0a 69 6e 20 61 20   f war, but.in a 
+08a0  6d 61 6e 6e 65 72 20 74 6f 20 62 65 20 70 72 65   manner to be pre
+08b0  73 63 72 69 62 65 64 20 62 79 20 6c 61 77 2e 0a   scribed by law..
+08c0  0a 3c 2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d 65 3d   .</p><p><a name=
+08d0  22 34 22 3e 3c 73 74 72 6f 6e 67 3e 3c 68 33 3e   "4"><strong><h3>
+08e0  41 6d 65 6e 64 6d 65 6e 74 20 49 56 3c 2f 68 33   Amendment IV</h3
+08f0  3e 3c 2f 73 74 72 6f 6e 67 3e 3c 2f 61 3e 0a 0a   ></strong></a>..
+0900  3c 70 3e 3c 2f 70 3e 3c 70 3e 54 68 65 20 72 69   <p></p><p>The ri
+0910  67 68 74 20 6f 66 20 74 68 65 20 70 65 6f 70 6c   ght of the peopl
+0920  65 20 74 6f 20 62 65 20 73 65 63 75 72 65 20 69   e to be secure i
+0930  6e 20 74 68 65 69 72 20 70 65 72 73 6f 6e 73 2c   n their persons,
+0940  20 68 6f 75 73 65 73 2c 0a 70 61 70 65 72 73 2c    houses,.papers,
+0950  20 61 6e 64 20 65 66 66 65 63 74 73 2c 20 61 67    and effects, ag
+0960  61 69 6e 73 74 20 75 6e 72 65 61 73 6f 6e 61 62   ainst unreasonab
+0970  6c 65 20 73 65 61 72 63 68 65 73 20 61 6e 64 20   le searches and 
+0980  73 65 69 7a 75 72 65 73 2c 0a 73 68 61 6c 6c 20   seizures,.shall 
+0990  6e 6f 74 20 62 65 20 76 69 6f 6c 61 74 65 64 2c   not be violated,
+09a0  20 61 6e 64 20 6e 6f 20 77 61 72 72 61 6e 74 73    and no warrants
+09b0  20 73 68 61 6c 6c 20 69 73 73 75 65 2c 20 62 75    shall issue, bu
+09c0  74 20 75 70 6f 6e 0a 70 72 6f 62 61 62 6c 65 20   t upon.probable 
+09d0  63 61 75 73 65 2c 20 73 75 70 70 6f 72 74 65 64   cause, supported
+09e0  20 62 79 20 6f 61 74 68 20 6f 72 20 61 66 66 69    by oath or affi
+09f0  72 6d 61 74 69 6f 6e 2c 20 61 6e 64 0a 70 61 72   rmation, and.par
+0a00  74 69 63 75 6c 61 72 6c 79 20 64 65 73 63 72 69   ticularly descri
+0a10  62 69 6e 67 20 74 68 65 20 70 6c 61 63 65 20 74   bing the place t
+0a20  6f 20 62 65 20 73 65 61 72 63 68 65 64 2c 20 61   o be searched, a
+0a30  6e 64 20 74 68 65 0a 70 65 72 73 6f 6e 73 20 6f   nd the.persons o
+0a40  72 20 74 68 69 6e 67 73 20 74 6f 20 62 65 20 73   r things to be s
+0a50  65 69 7a 65 64 2e 0a 0a 3c 2f 70 3e 3c 70 3e 3c   eized...</p><p><
+0a60  61 20 6e 61 6d 65 3d 22 35 22 3e 3c 73 74 72 6f   a name="5"><stro
+0a70  6e 67 3e 3c 68 33 3e 41 6d 65 6e 64 6d 65 6e 74   ng><h3>Amendment
+0a80  20 56 3c 2f 68 33 3e 3c 2f 73 74 72 6f 6e 67 3e    V</h3></strong>
+0a90  3c 2f 61 3e 0a 0a 3c 70 3e 3c 2f 70 3e 3c 70 3e   </a>..<p></p><p>
+0aa0  4e 6f 20 70 65 72 73 6f 6e 20 73 68 61 6c 6c 20   No person shall 
+0ab0  62 65 20 68 65 6c 64 20 74 6f 20 61 6e 73 77 65   be held to answe
+0ac0  72 20 66 6f 72 20 61 20 63 61 70 69 74 61 6c 2c   r for a capital,
+0ad0  20 6f 72 20 6f 74 68 65 72 77 69 73 65 0a 69 6e    or otherwise.in
+0ae0  66 61 6d 6f 75 73 20 63 72 69 6d 65 2c 20 75 6e   famous crime, un
+0af0  6c 65 73 73 20 6f 6e 20 61 20 70 72 65 73 65 6e   less on a presen
+0b00  74 6d 65 6e 74 20 6f 72 20 69 6e 64 69 63 74 6d   tment or indictm
+0b10  65 6e 74 20 6f 66 20 61 20 67 72 61 6e 64 0a 6a   ent of a grand.j
+0b20  75 72 79 2c 20 65 78 63 65 70 74 20 69 6e 20 63   ury, except in c
+0b30  61 73 65 73 20 61 72 69 73 69 6e 67 20 69 6e 20   ases arising in 
+0b40  74 68 65 20 6c 61 6e 64 20 6f 72 20 6e 61 76 61   the land or nava
+0b50  6c 20 66 6f 72 63 65 73 2c 0a 6f 72 20 69 6e 20   l forces,.or in 
+0b60  74 68 65 20 6d 69 6c 69 74 69 61 2c 20 77 68 65   the militia, whe
+0b70  6e 20 69 6e 20 61 63 74 75 61 6c 20 73 65 72 76   n in actual serv
+0b80  69 63 65 20 69 6e 20 74 69 6d 65 20 6f 66 20 77   ice in time of w
+0b90  61 72 0a 6f 72 20 70 75 62 6c 69 63 20 64 61 6e   ar.or public dan
+0ba0  67 65 72 3b 20 6e 6f 72 20 73 68 61 6c 6c 20 61   ger; nor shall a
+0bb0  6e 79 20 70 65 72 73 6f 6e 20 62 65 20 73 75 62   ny person be sub
+0bc0  6a 65 63 74 20 66 6f 72 20 74 68 65 0a 73 61 6d   ject for the.sam
+0bd0  65 20 6f 66 66 65 6e 73 65 20 74 6f 20 62 65 20   e offense to be 
+0be0  74 77 69 63 65 20 70 75 74 20 69 6e 20 6a 65 6f   twice put in jeo
+0bf0  70 61 72 64 79 20 6f 66 20 6c 69 66 65 20 6f 72   pardy of life or
+0c00  20 6c 69 6d 62 3b 0a 6e 6f 72 20 73 68 61 6c 6c    limb;.nor shall
+0c10  20 62 65 20 63 6f 6d 70 65 6c 6c 65 64 20 69 6e    be compelled in
+0c20  20 61 6e 79 20 63 72 69 6d 69 6e 61 6c 20 63 61    any criminal ca
+0c30  73 65 20 74 6f 20 62 65 20 61 20 77 69 74 6e 65   se to be a witne
+0c40  73 73 0a 61 67 61 69 6e 73 74 20 68 69 6d 73 65   ss.against himse
+0c50  6c 66 2c 20 6e 6f 72 20 62 65 20 64 65 70 72 69   lf, nor be depri
+0c60  76 65 64 20 6f 66 20 6c 69 66 65 2c 20 6c 69 62   ved of life, lib
+0c70  65 72 74 79 2c 20 6f 72 20 70 72 6f 70 65 72 74   erty, or propert
+0c80  79 2c 0a 77 69 74 68 6f 75 74 20 64 75 65 20 70   y,.without due p
+0c90  72 6f 63 65 73 73 20 6f 66 20 6c 61 77 3b 20 6e   rocess of law; n
+0ca0  6f 72 20 73 68 61 6c 6c 20 70 72 69 76 61 74 65   or shall private
+0cb0  20 70 72 6f 70 65 72 74 79 20 62 65 0a 74 61 6b    property be.tak
+0cc0  65 6e 20 66 6f 72 20 70 75 62 6c 69 63 20 75 73   en for public us
+0cd0  65 2c 20 77 69 74 68 6f 75 74 20 6a 75 73 74 20   e, without just 
+0ce0  63 6f 6d 70 65 6e 73 61 74 69 6f 6e 2e 0a 0a 3c   compensation...<
+0cf0  2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d 65 3d 22 36   /p><p><a name="6
+0d00  22 3e 3c 73 74 72 6f 6e 67 3e 3c 68 33 3e 41 6d   "><strong><h3>Am
+0d10  65 6e 64 6d 65 6e 74 20 56 49 3c 2f 68 33 3e 3c   endment VI</h3><
+0d20  2f 73 74 72 6f 6e 67 3e 3c 2f 61 3e 0a 0a 3c 70   /strong></a>..<p
+0d30  3e 3c 2f 70 3e 3c 70 3e 49 6e 20 61 6c 6c 20 63   ></p><p>In all c
+0d40  72 69 6d 69 6e 61 6c 20 70 72 6f 73 65 63 75 74   riminal prosecut
+0d50  69 6f 6e 73 2c 20 74 68 65 20 61 63 63 75 73 65   ions, the accuse
+0d60  64 20 73 68 61 6c 6c 20 65 6e 6a 6f 79 20 74 68   d shall enjoy th
+0d70  65 20 72 69 67 68 74 0a 74 6f 20 61 20 73 70 65   e right.to a spe
+0d80  65 64 79 20 61 6e 64 20 70 75 62 6c 69 63 20 74   edy and public t
+0d90  72 69 61 6c 2c 20 62 79 20 61 6e 20 69 6d 70 61   rial, by an impa
+0da0  72 74 69 61 6c 20 6a 75 72 79 20 6f 66 20 74 68   rtial jury of th
+0db0  65 20 73 74 61 74 65 0a 61 6e 64 20 64 69 73 74   e state.and dist
+0dc0  72 69 63 74 20 77 68 65 72 65 69 6e 20 74 68 65   rict wherein the
+0dd0  20 63 72 69 6d 65 20 73 68 61 6c 6c 20 68 61 76    crime shall hav
+0de0  65 20 62 65 65 6e 20 63 6f 6d 6d 69 74 74 65 64   e been committed
+0df0  2c 20 77 68 69 63 68 0a 64 69 73 74 72 69 63 74   , which.district
+0e00  20 73 68 61 6c 6c 20 68 61 76 65 20 62 65 65 6e    shall have been
+0e10  20 70 72 65 76 69 6f 75 73 6c 79 20 61 73 63 65    previously asce
+0e20  72 74 61 69 6e 65 64 20 62 79 20 6c 61 77 2c 20   rtained by law, 
+0e30  61 6e 64 0a 74 6f 20 62 65 20 69 6e 66 6f 72 6d   and.to be inform
+0e40  65 64 20 6f 66 20 74 68 65 20 6e 61 74 75 72 65   ed of the nature
+0e50  20 61 6e 64 20 63 61 75 73 65 20 6f 66 20 74 68    and cause of th
+0e60  65 20 61 63 63 75 73 61 74 69 6f 6e 3b 0a 74 6f   e accusation;.to
+0e70  20 62 65 20 63 6f 6e 66 72 6f 6e 74 65 64 20 77    be confronted w
+0e80  69 74 68 20 74 68 65 20 77 69 74 6e 65 73 73 65   ith the witnesse
+0e90  73 20 61 67 61 69 6e 73 74 20 68 69 6d 3b 20 74   s against him; t
+0ea0  6f 20 68 61 76 65 0a 63 6f 6d 70 75 6c 73 6f 72   o have.compulsor
+0eb0  79 20 70 72 6f 63 65 73 73 20 66 6f 72 20 6f 62   y process for ob
+0ec0  74 61 69 6e 69 6e 67 20 77 69 74 6e 65 73 73 65   taining witnesse
+0ed0  73 20 69 6e 20 68 69 73 20 66 61 76 6f 72 2c 0a   s in his favor,.
+0ee0  61 6e 64 20 74 6f 20 68 61 76 65 20 74 68 65 20   and to have the 
+0ef0  61 73 73 69 73 74 61 6e 63 65 20 6f 66 20 63 6f   assistance of co
+0f00  75 6e 73 65 6c 20 66 6f 72 20 68 69 73 20 64 65   unsel for his de
+0f10  66 65 6e 73 65 2e 0a 0a 3c 2f 70 3e 3c 70 3e 3c   fense...</p><p><
+0f20  61 20 6e 61 6d 65 3d 22 37 22 3e 3c 73 74 72 6f   a name="7"><stro
+0f30  6e 67 3e 3c 68 33 3e 41 6d 65 6e 64 6d 65 6e 74   ng><h3>Amendment
+0f40  20 56 49 49 3c 2f 68 33 3e 3c 2f 73 74 72 6f 6e    VII</h3></stron
+0f50  67 3e 3c 2f 61 3e 0a 0a 3c 70 3e 3c 2f 70 3e 3c   g></a>..<p></p><
+0f60  70 3e 49 6e 20 73 75 69 74 73 20 61 74 20 63 6f   p>In suits at co
+0f70  6d 6d 6f 6e 20 6c 61 77 2c 20 77 68 65 72 65 20   mmon law, where 
+0f80  74 68 65 20 76 61 6c 75 65 20 69 6e 20 63 6f 6e   the value in con
+0f90  74 72 6f 76 65 72 73 79 20 73 68 61 6c 6c 0a 65   troversy shall.e
+0fa0  78 63 65 65 64 20 74 77 65 6e 74 79 20 64 6f 6c   xceed twenty dol
+0fb0  6c 61 72 73 2c 20 74 68 65 20 72 69 67 68 74 20   lars, the right 
+0fc0  6f 66 20 74 72 69 61 6c 20 62 79 20 6a 75 72 79   of trial by jury
+0fd0  20 73 68 61 6c 6c 20 62 65 0a 70 72 65 73 65 72    shall be.preser
+0fe0  76 65 64 2c 20 61 6e 64 20 6e 6f 20 66 61 63 74   ved, and no fact
+0ff0  20 74 72 69 65 64 20 62 79 20 61 20 6a 75 72 79    tried by a jury
+1000  2c 20 73 68 61 6c 6c 20 62 65 20 6f 74 68 65 72   , shall be other
+1010  77 69 73 65 0a 72 65 65 78 61 6d 69 6e 65 64 20   wise.reexamined 
+1020  69 6e 20 61 6e 79 20 63 6f 75 72 74 20 6f 66 20   in any court of 
+1030  74 68 65 20 55 6e 69 74 65 64 20 53 74 61 74 65   the United State
+1040  73 2c 20 74 68 61 6e 20 61 63 63 6f 72 64 69 6e   s, than accordin
+1050  67 0a 74 6f 20 74 68 65 20 72 75 6c 65 73 20 6f   g.to the rules o
+1060  66 20 74 68 65 20 63 6f 6d 6d 6f 6e 20 6c 61 77   f the common law
+1070  2e 0a 0a 3c 2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d   ...</p><p><a nam
+1080  65 3d 22 38 22 3e 3c 73 74 72 6f 6e 67 3e 3c 68   e="8"><strong><h
+1090  33 3e 41 6d 65 6e 64 6d 65 6e 74 20 56 49 49 49   3>Amendment VIII
+10a0  3c 2f 68 33 3e 3c 2f 73 74 72 6f 6e 67 3e 3c 2f   </h3></strong></
+10b0  61 3e 0a 0a 3c 70 3e 3c 2f 70 3e 3c 70 3e 45 78   a>..<p></p><p>Ex
+10c0  63 65 73 73 69 76 65 20 62 61 69 6c 20 73 68 61   cessive bail sha
+10d0  6c 6c 20 6e 6f 74 20 62 65 20 72 65 71 75 69 72   ll not be requir
+10e0  65 64 2c 20 6e 6f 72 20 65 78 63 65 73 73 69 76   ed, nor excessiv
+10f0  65 20 66 69 6e 65 73 0a 69 6d 70 6f 73 65 64 2c   e fines.imposed,
+1100  20 6e 6f 72 20 63 72 75 65 6c 20 61 6e 64 20 75    nor cruel and u
+1110  6e 75 73 75 61 6c 20 70 75 6e 69 73 68 6d 65 6e   nusual punishmen
+1120  74 73 20 69 6e 66 6c 69 63 74 65 64 2e 0a 0a 3c   ts inflicted...<
+1130  2f 70 3e 3c 70 3e 3c 61 20 6e 61 6d 65 3d 22 39   /p><p><a name="9
+1140  22 3e 3c 73 74 72 6f 6e 67 3e 3c 68 33 3e 41 6d   "><strong><h3>Am
+1150  65 6e 64 6d 65 6e 74 20 49 58 3c 2f 68 33 3e 3c   endment IX</h3><
+1160  2f 73 74 72 6f 6e 67 3e 3c 2f 61 3e 0a 0a 3c 70   /strong></a>..<p
+1170  3e 3c 2f 70 3e 3c 70 3e 54 68 65 20 65 6e 75 6d   ></p><p>The enum
+1180  65 72 61 74 69 6f 6e 20 69 6e 20 74 68 65 20 43   eration in the C
+1190  6f 6e 73 74 69 74 75 74 69 6f 6e 2c 20 6f 66 20   onstitution, of 
+11a0  63 65 72 74 61 69 6e 20 72 69 67 68 74 73 2c 20   certain rights, 
+11b0  73 68 61 6c 6c 0a 6e 6f 74 20 62 65 20 63 6f 6e   shall.not be con
+11c0  73 74 72 75 65 64 20 74 6f 20 64 65 6e 79 20 6f   strued to deny o
+11d0  72 20 64 69 73 70 61 72 61 67 65 20 6f 74 68 65   r disparage othe
+11e0  72 73 20 72 65 74 61 69 6e 65 64 20 62 79 20 74   rs retained by t
+11f0  68 65 20 70 65 6f 70 6c 65 2e 0a 0a 3c 2f 70 3e   he people...</p>
+1200  3c 70 3e 3c 61 20 6e 61 6d 65 3d 22 31 30 22 3e   <p><a name="10">
+1210  3c 73 74 72 6f 6e 67 3e 3c 68 33 3e 41 6d 65 6e   <strong><h3>Amen
+1220  64 6d 65 6e 74 20 58 3c 2f 68 33 3e 3c 2f 73 74   dment X</h3></st
+1230  72 6f 6e 67 3e 3c 2f 61 3e 0a 0a 3c 70 3e 3c 2f   rong></a>..<p></
+1240  70 3e 0a 3c 70 3e 54 68 65 20 70 6f 77 65 72 73   p>.<p>The powers
+1250  20 6e 6f 74 20 64 65 6c 65 67 61 74 65 64 20 74    not delegated t
+1260  6f 20 74 68 65 20 55 6e 69 74 65 64 20 53 74 61   o the United Sta
+1270  74 65 73 20 62 79 20 74 68 65 20 43 6f 6e 73 74   tes by the Const
+1280  69 74 75 74 69 6f 6e 2c 20 6e 6f 72 20 70 72 6f   itution, nor pro
+1290  68 69 62 69 74 65 64 20 0a 20 20 62 79 20 69 74   hibited .  by it
+12a0  20 74 6f 20 74 68 65 20 73 74 61 74 65 73 2c 20    to the states, 
+12b0  61 72 65 20 72 65 73 65 72 76 65 64 20 74 6f 20   are reserved to 
+12c0  74 68 65 20 73 74 61 74 65 73 20 72 65 73 70 65   the states respe
+12d0  63 74 69 76 65 6c 79 2c 20 6f 72 20 74 6f 20 74   ctively, or to t
+12e0  68 65 20 70 65 6f 70 6c 65 2e 3c 2f 70 3e 0a 3c   he people.</p>.<
+12f0  2f 62 6f 64 79 3e 3c 2f 68 74 6d 6c 3e            /body></html>

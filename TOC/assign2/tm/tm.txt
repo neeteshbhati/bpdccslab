@@ -1,0 +1,16 @@
+ATM
+2017A7PS0060U
+0 1                                                                                                                     
+0 1 B                                                                                                                   
+1                                                                                                                       
+1                                                                                                                       
+2                                                                                                                       
+s0                                                                                                                      
+s2 s2 
+s0 0 s0 0 R                                                                                                             
+s0 1 s0 1 R                                                                                                             
+s0 B s1 B L                                                                                                             
+s1 1 s1 0 L                                                                                                             
+s1 0 s2 1 L                                                                                                             
+s1 B s2 1 L                                                                                                             
+end        

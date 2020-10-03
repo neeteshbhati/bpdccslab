@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+  int varone,vartwo,varthree;
+  double vAR4;
+  char testone, testtwo,testthree;
+  testone=testtwo+testthree/(testone*testtwo);
+  vartwo=varone*varone+varthree;
+}

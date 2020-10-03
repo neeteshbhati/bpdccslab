@@ -1,0 +1,101 @@
+import java.util.*;
+
+class Queue {
+
+	int size = 5;
+	
+	int[] circularQueue = new int[5];
+
+	int front=0;
+	int rear=0;
+
+	int size() {
+	
+		return (size-front+rear)%size;
+	
+	}
+
+	boolean isEmpty() {
+	
+		return (front==rear);
+	
+	}
+
+	int front() {
+	
+		return circularQueue[front];
+	
+	}
+
+	void display() {
+	
+		for(int i=front;i<rear;i=(i+1)%size)
+			System.out.println(circularQueue[i]);
+	
+	
+	}
+
+	void enqueue (int data) {
+	
+		if (size()==size-1)
+			System.out.println("Overflow");
+	
+	
+		else {
+		
+			circularQueue[rear] = data;
+			rear = (rear + 1)%size;
+		
+		}
+	}
+
+	void dequeue () {
+	
+		if (isEmpty())
+			System.out.println("Underflow");
+
+		else 
+			front = (front+1)%size;
+		
+	}
+
+}
+
+class circularQueue {
+
+	public static void main(String[] args) {
+	
+		Scanner scanner = new Scanner(System.in);
+		Queue queue = new Queue();
+		int choice;
+
+		do {
+	
+			System.out.println("1. Enqueue");
+			System.out.println("2. Dequeue");
+			System.out.println("3. Display");
+			System.out.println("4. isEmpty");
+			System.out.println("5. Size");
+			System.out.println("6. Front");
+			System.out.println("7. Exit");
+
+			choice = scanner.nextInt();
+
+			switch (choice) {
+		
+				case 1 : System.out.println("Enter data");
+					 int data = scanner.nextInt();
+					 queue.enqueue(data); break;
+				case 2 : queue.dequeue(); break;
+				case 3 : queue.display(); break;
+				case 4 : System.out.println(queue.isEmpty()); break;
+				case 5 : System.out.println(queue.size()); break;
+				case 6 : System.out.println(queue.front()); break;
+		
+			}
+		
+		} while (choice!=7);
+
+	}
+
+}

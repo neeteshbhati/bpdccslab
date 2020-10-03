@@ -1,0 +1,11 @@
+ REPORT 
+TITLE: NEW MACHINE 
+
+
+TITLE: 2017A7PS0060U 
+  SNAPSHOT: Stopped ACCEPTED after Step: 16
+  SNAPSHOT: Stopped ACCEPTED after Step: 10
+  SNAPSHOT: Stopped ACCEPTED after Step: 13
+  SNAPSHOT: Stopped ACCEPTED after Step: 14
+  SNAPSHOT: Stopped  Not Accepted after Step:10
+  SNAPSHOT: Stopped  Not Accepted after Step:13

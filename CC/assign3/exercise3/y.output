@@ -1,0 +1,280 @@
+   0  $accept : prm $end
+
+   1  prm : HEADER INT MAIN LB RB LCB BODY RCB
+
+   2  BODY : DECLARATION_STATEMENTS PROGRAM_STATEMENTS
+
+   3  DECLARATION_STATEMENTS : DECLARATION_STATEMENT DECLARATION_STATEMENTS
+   4                         | DECLARATION_STATEMENT
+
+   5  PROGRAM_STATEMENTS : PROGRAM_STATEMENT PROGRAM_STATEMENTS
+   6                     | PROGRAM_STATEMENT
+
+   7  DECLARATION_STATEMENT : INT VAR_LIST SC
+
+   8  VAR_LIST : VAR COMA VAR_LIST
+   9           | VAR
+
+  10  PROGRAM_STATEMENT : VAR EQ A_EXPN SC
+
+  11  A_EXPN : A_EXPN OP A_EXPN
+  12         | LB A_EXPN RB
+  13         | VAR
+
+state 0
+	$accept : . prm $end  (0)
+
+	HEADER  shift 1
+	.  error
+
+	prm  goto 2
+
+
+state 1
+	prm : HEADER . INT MAIN LB RB LCB BODY RCB  (1)
+
+	INT  shift 3
+	.  error
+
+
+state 2
+	$accept : prm . $end  (0)
+
+	$end  accept
+
+
+state 3
+	prm : HEADER INT . MAIN LB RB LCB BODY RCB  (1)
+
+	MAIN  shift 4
+	.  error
+
+
+state 4
+	prm : HEADER INT MAIN . LB RB LCB BODY RCB  (1)
+
+	LB  shift 5
+	.  error
+
+
+state 5
+	prm : HEADER INT MAIN LB . RB LCB BODY RCB  (1)
+
+	RB  shift 6
+	.  error
+
+
+state 6
+	prm : HEADER INT MAIN LB RB . LCB BODY RCB  (1)
+
+	LCB  shift 7
+	.  error
+
+
+state 7
+	prm : HEADER INT MAIN LB RB LCB . BODY RCB  (1)
+
+	INT  shift 8
+	.  error
+
+	BODY  goto 9
+	DECLARATION_STATEMENTS  goto 10
+	DECLARATION_STATEMENT  goto 11
+
+
+state 8
+	DECLARATION_STATEMENT : INT . VAR_LIST SC  (7)
+
+	VAR  shift 12
+	.  error
+
+	VAR_LIST  goto 13
+
+
+state 9
+	prm : HEADER INT MAIN LB RB LCB BODY . RCB  (1)
+
+	RCB  shift 14
+	.  error
+
+
+state 10
+	BODY : DECLARATION_STATEMENTS . PROGRAM_STATEMENTS  (2)
+
+	VAR  shift 15
+	.  error
+
+	PROGRAM_STATEMENTS  goto 16
+	PROGRAM_STATEMENT  goto 17
+
+
+state 11
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT . DECLARATION_STATEMENTS  (3)
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT .  (4)
+
+	INT  shift 8
+	VAR  reduce 4
+
+	DECLARATION_STATEMENTS  goto 18
+	DECLARATION_STATEMENT  goto 11
+
+
+state 12
+	VAR_LIST : VAR . COMA VAR_LIST  (8)
+	VAR_LIST : VAR .  (9)
+
+	COMA  shift 19
+	SC  reduce 9
+
+
+state 13
+	DECLARATION_STATEMENT : INT VAR_LIST . SC  (7)
+
+	SC  shift 20
+	.  error
+
+
+state 14
+	prm : HEADER INT MAIN LB RB LCB BODY RCB .  (1)
+
+	.  reduce 1
+
+
+state 15
+	PROGRAM_STATEMENT : VAR . EQ A_EXPN SC  (10)
+
+	EQ  shift 21
+	.  error
+
+
+state 16
+	BODY : DECLARATION_STATEMENTS PROGRAM_STATEMENTS .  (2)
+
+	.  reduce 2
+
+
+state 17
+	PROGRAM_STATEMENTS : PROGRAM_STATEMENT . PROGRAM_STATEMENTS  (5)
+	PROGRAM_STATEMENTS : PROGRAM_STATEMENT .  (6)
+
+	VAR  shift 15
+	RCB  reduce 6
+
+	PROGRAM_STATEMENTS  goto 22
+	PROGRAM_STATEMENT  goto 17
+
+
+state 18
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT DECLARATION_STATEMENTS .  (3)
+
+	.  reduce 3
+
+
+state 19
+	VAR_LIST : VAR COMA . VAR_LIST  (8)
+
+	VAR  shift 12
+	.  error
+
+	VAR_LIST  goto 23
+
+
+state 20
+	DECLARATION_STATEMENT : INT VAR_LIST SC .  (7)
+
+	.  reduce 7
+
+
+state 21
+	PROGRAM_STATEMENT : VAR EQ . A_EXPN SC  (10)
+
+	LB  shift 24
+	VAR  shift 25
+	.  error
+
+	A_EXPN  goto 26
+
+
+state 22
+	PROGRAM_STATEMENTS : PROGRAM_STATEMENT PROGRAM_STATEMENTS .  (5)
+
+	.  reduce 5
+
+
+state 23
+	VAR_LIST : VAR COMA VAR_LIST .  (8)
+
+	.  reduce 8
+
+
+state 24
+	A_EXPN : LB . A_EXPN RB  (12)
+
+	LB  shift 24
+	VAR  shift 25
+	.  error
+
+	A_EXPN  goto 27
+
+
+state 25
+	A_EXPN : VAR .  (13)
+
+	.  reduce 13
+
+
+state 26
+	PROGRAM_STATEMENT : VAR EQ A_EXPN . SC  (10)
+	A_EXPN : A_EXPN . OP A_EXPN  (11)
+
+	SC  shift 28
+	OP  shift 29
+	.  error
+
+
+state 27
+	A_EXPN : A_EXPN . OP A_EXPN  (11)
+	A_EXPN : LB A_EXPN . RB  (12)
+
+	RB  shift 30
+	OP  shift 29
+	.  error
+
+
+state 28
+	PROGRAM_STATEMENT : VAR EQ A_EXPN SC .  (10)
+
+	.  reduce 10
+
+
+state 29
+	A_EXPN : A_EXPN OP . A_EXPN  (11)
+
+	LB  shift 24
+	VAR  shift 25
+	.  error
+
+	A_EXPN  goto 31
+
+
+state 30
+	A_EXPN : LB A_EXPN RB .  (12)
+
+	.  reduce 12
+
+
+31: shift/reduce conflict (shift 29, reduce 11) on OP
+state 31
+	A_EXPN : A_EXPN . OP A_EXPN  (11)
+	A_EXPN : A_EXPN OP A_EXPN .  (11)
+
+	OP  shift 29
+	RB  reduce 11
+	SC  reduce 11
+
+
+State 31 contains 1 shift/reduce conflict.
+
+
+14 terminals, 9 nonterminals
+14 grammar rules, 32 states

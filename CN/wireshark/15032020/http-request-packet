@@ -1,0 +1,161 @@
+No.     Time           Source                Destination           Protocol Length Info
+     19 3.448387610    192.168.1.142         128.119.245.12        HTTP     524    GET /wireshark-labs/HTTP-ethereal-lab-file3.html HTTP/1.1 
+
+Frame 19: 524 bytes on wire (4192 bits), 524 bytes captured (4192 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 16, 2020 19:46:15.266274055 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584368175.266274055 seconds
+    [Time delta from previous captured frame: 0.000653616 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 3.448387610 seconds]
+    Frame Number: 19
+    Frame Length: 524 bytes (4192 bits)
+    Capture Length: 524 bytes (4192 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef), Dst: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+    Destination: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.142, Dst: 128.119.245.12
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 510
+    Identification: 0x48b5 (18613)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0xb88a [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.1.142
+    Destination: 128.119.245.12
+Transmission Control Protocol, Src Port: 53596, Dst Port: 80, Seq: 1, Ack: 1, Len: 458
+    Source Port: 53596
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 458]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 459    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 502
+    [Calculated window size: 64256]
+    [Window size scaling factor: 128]
+    Checksum: 0x2922 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 3797012949, TSecr 4060668672
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 3797012949
+            Timestamp echo reply: 4060668672
+    [SEQ/ACK analysis]
+        [iRTT: 0.411742552 seconds]
+        [Bytes in flight: 458]
+        [Bytes sent since last PSH flag: 458]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.412554706 seconds]
+        [Time since previous frame in this TCP stream: 0.000812154 seconds]
+    TCP payload (458 bytes)
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-ethereal-lab-file3.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-ethereal-lab-file3.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/HTTP-ethereal-lab-file3.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-ethereal-lab-file3.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: en-US,en;q=0.9\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-ethereal-lab-file3.html]
+    [HTTP request 1/2]
+    [Response in frame: 27]
+TRANSUM RTE Data
+    [RTE Status: OK]
+    [Req First Seg: 19]
+    [Req Last Seg: 19]
+    [Rsp First Seg: 23]
+    [Rsp Last Seg: 32]
+    [APDU Rsp Time: 1.276764795 seconds]
+    [Service Time: 0.335887102 seconds]
+    [Req Spread: 0.000000000 seconds]
+    [Rsp Spread: 0.940877693 seconds]
+    [Trace clip filter: tcp.stream==1 && frame.number>=19 && frame.number<=32 && tcp.len>0]
+    [Calculation: Generic TCP]
+
+0000  50 64 2b 4e b1 6b 7c 67 a2 54 ac ef 08 00 45 00   Pd+N.k|g.T....E.
+0010  01 fe 48 b5 40 00 40 06 b8 8a c0 a8 01 8e 80 77   ..H.@.@........w
+0020  f5 0c d1 5c 00 50 c6 db 77 b1 10 31 d9 19 80 18   ...\.P..w..1....
+0030  01 f6 29 22 00 00 01 01 08 0a e2 51 d1 d5 f2 08   ..)".......Q....
+0040  e3 00 47 45 54 20 2f 77 69 72 65 73 68 61 72 6b   ..GET /wireshark
+0050  2d 6c 61 62 73 2f 48 54 54 50 2d 65 74 68 65 72   -labs/HTTP-ether
+0060  65 61 6c 2d 6c 61 62 2d 66 69 6c 65 33 2e 68 74   eal-lab-file3.ht
+0070  6d 6c 20 48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73   ml HTTP/1.1..Hos
+0080  74 3a 20 67 61 69 61 2e 63 73 2e 75 6d 61 73 73   t: gaia.cs.umass
+0090  2e 65 64 75 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e   .edu..Connection
+00a0  3a 20 6b 65 65 70 2d 61 6c 69 76 65 0d 0a 55 70   : keep-alive..Up
+00b0  67 72 61 64 65 2d 49 6e 73 65 63 75 72 65 2d 52   grade-Insecure-R
+00c0  65 71 75 65 73 74 73 3a 20 31 0d 0a 55 73 65 72   equests: 1..User
+00d0  2d 41 67 65 6e 74 3a 20 4d 6f 7a 69 6c 6c 61 2f   -Agent: Mozilla/
+00e0  35 2e 30 20 28 58 31 31 3b 20 4c 69 6e 75 78 20   5.0 (X11; Linux 
+00f0  78 38 36 5f 36 34 29 20 41 70 70 6c 65 57 65 62   x86_64) AppleWeb
+0100  4b 69 74 2f 35 33 37 2e 33 36 20 28 4b 48 54 4d   Kit/537.36 (KHTM
+0110  4c 2c 20 6c 69 6b 65 20 47 65 63 6b 6f 29 20 43   L, like Gecko) C
+0120  68 72 6f 6d 65 2f 38 30 2e 30 2e 33 39 38 37 2e   hrome/80.0.3987.
+0130  31 33 32 20 53 61 66 61 72 69 2f 35 33 37 2e 33   132 Safari/537.3
+0140  36 0d 0a 41 63 63 65 70 74 3a 20 74 65 78 74 2f   6..Accept: text/
+0150  68 74 6d 6c 2c 61 70 70 6c 69 63 61 74 69 6f 6e   html,application
+0160  2f 78 68 74 6d 6c 2b 78 6d 6c 2c 61 70 70 6c 69   /xhtml+xml,appli
+0170  63 61 74 69 6f 6e 2f 78 6d 6c 3b 71 3d 30 2e 39   cation/xml;q=0.9
+0180  2c 69 6d 61 67 65 2f 77 65 62 70 2c 69 6d 61 67   ,image/webp,imag
+0190  65 2f 61 70 6e 67 2c 2a 2f 2a 3b 71 3d 30 2e 38   e/apng,*/*;q=0.8
+01a0  2c 61 70 70 6c 69 63 61 74 69 6f 6e 2f 73 69 67   ,application/sig
+01b0  6e 65 64 2d 65 78 63 68 61 6e 67 65 3b 76 3d 62   ned-exchange;v=b
+01c0  33 3b 71 3d 30 2e 39 0d 0a 41 63 63 65 70 74 2d   3;q=0.9..Accept-
+01d0  45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69 70 2c 20   Encoding: gzip, 
+01e0  64 65 66 6c 61 74 65 0d 0a 41 63 63 65 70 74 2d   deflate..Accept-
+01f0  4c 61 6e 67 75 61 67 65 3a 20 65 6e 2d 55 53 2c   Language: en-US,
+0200  65 6e 3b 71 3d 30 2e 39 0d 0a 0d 0a               en;q=0.9....

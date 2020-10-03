@@ -1,0 +1,8 @@
+300
+6
+aaaabbbbccc
+aabbc
+aabbbccc
+abbbbcccc
+abbccc
+aabbbcccc

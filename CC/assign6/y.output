@@ -1,0 +1,2024 @@
+Terminals unused in grammar
+
+   QUOTE
+
+
+Grammar
+
+    0 $accept: PROGRAM $end
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB RB LCB BODY RCB
+
+    2 HEADERS: HEADER HEADERS
+    3        | HEADER
+
+    4 BODY: DECLARATION_STATEMENTS PROGRAM_STATEMENTS BODY
+    5     | DECLARATION_STATEMENTS PROGRAM_STATEMENTS
+
+    6 DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS
+    7                       | DECLARATION_STATEMENT
+
+    8 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST SC
+
+    9 VAR_LIST: VAR COMA VAR_LIST
+   10         | VAR LSB NUM RSB
+   11         | VAR LSB VAR RSB
+   12         | VAR
+
+   13 MAIN_TYPE: INT
+
+   14 DATA_TYPE: INT
+   15          | CHAR
+   16          | FLOAT
+   17          | DOUBLE
+
+   18 PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS
+   19                   | PROGRAM_STATEMENT
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM RSB EQ A_EXPN SC
+   21                  | VAR EQ A_EXPN SC
+   22                  | CONDITIONAL
+   23                  | LOOP
+   24                  | FUNCTION
+
+   25 FUNCTION: READ
+   26         | WRITE
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER COMA AND VAR LSB VAR RSB RB SC
+   29     | SCANF LB PLACEHOLDER COMA VAR RB SC
+   30     | SCANF LB PLACEHOLDER COMA AND VAR RB SC
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB NUM RSB RB SC
+   32      | PRINTF LB PLACEHOLDER COMA VAR LSB VAR RSB RB SC
+   33      | PRINTF LB PLACEHOLDER COMA VAR RB SC
+   34      | PRINTF LB PLACEHOLDER RB SC
+
+   35 PLACEHOLDER: LITERAL
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB
+   38            | LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+   39 LOOP: WHILE LB CLOG_EXPN RB LCB LOOP_BODY RCB
+   40     | DO LCB LOOP_BODY RCB WHILE LB CLOG_EXPN RB
+   41     | FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY RCB
+
+   42 LOOP_BODY: BODY
+   43          | PROGRAM_STATEMENTS BODY
+   44          | PROGRAM_STATEMENTS
+
+   45 CLOG_EXPN: SLOG_EXPN BCMP SLOG_EXPN
+   46          | SLOG_EXPN
+
+   47 BCMP: LAND
+   48     | LOR
+
+   49 SLOG_EXPN: NOT LB SLOG_EXPN RB
+   50          | VAR BLOG VAR
+   51          | VAR BLOG NUM
+
+   52 BLOG: GTE
+   53     | LTE
+   54     | GT
+   55     | LT
+   56     | NEQ
+   57     | LEQ
+
+   58 A_EXPN: A_EXPN PLUS A_EXPN
+   59       | A_EXPN MINUS A_EXPN
+   60       | A_EXPN MUL A_EXPN
+   61       | A_EXPN DIV A_EXPN
+   62       | A_EXPN MOD A_EXPN
+   63       | A_EXPN EXP A_EXPN
+   64       | A_EXPN UPLUS
+   65       | A_EXPN UMINUS
+   66       | LB A_EXPN RB
+   67       | NUM
+   68       | VAR LSB NUM RSB
+   69       | VAR LSB VAR RSB
+   70       | VAR
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+HEADER (258) 2 3
+MAIN (259) 1
+VAR (260) 9 10 11 12 20 21 27 28 29 30 31 32 33 50 51 68 69 70
+NUM (261) 10 20 27 31 51 67 68
+SCANF (262) 27 28 29 30
+PRINTF (263) 31 32 33 34
+AND (264) 27 28 30
+LB (265) 1 27 28 29 30 31 32 33 34 36 37 38 39 40 41 49 66
+RB (266) 1 27 28 29 30 31 32 33 34 36 37 38 39 40 41 49 66
+LCB (267) 1 36 37 38 39 40 41
+RCB (268) 1 36 37 38 39 40 41
+LSB (269) 10 11 20 27 28 31 32 68 69
+RSB (270) 10 11 20 27 28 31 32 68 69
+SC (271) 8 20 21 27 28 29 30 31 32 33 34 41
+COMA (272) 9 27 28 29 30 31 32 33
+QUES (273) 38
+COLN (274) 38
+QUOTE (275)
+EQ (276) 20 21
+PLUS (277) 58
+MINUS (278) 59
+MUL (279) 60
+DIV (280) 61
+EXP (281) 63
+UPLUS (282) 64
+UMINUS (283) 65
+MOD (284) 62
+LT (285) 55
+GT (286) 54
+LTE (287) 53
+GTE (288) 52
+NEQ (289) 56
+LEQ (290) 57
+LAND (291) 47
+LOR (292) 48
+NOT (293) 49
+IF (294) 36 37
+ELSE (295) 36
+WHILE (296) 39 40
+DO (297) 40
+FOR (298) 41
+INT (299) 13 14
+CHAR (300) 15
+FLOAT (301) 16
+DOUBLE (302) 17
+LITERAL (303) 35
+
+
+Nonterminals, with rules where they appear
+
+$accept (49)
+    on left: 0
+PROGRAM (50)
+    on left: 1, on right: 0
+HEADERS (51)
+    on left: 2 3, on right: 1 2
+BODY (52)
+    on left: 4 5, on right: 1 4 42 43
+DECLARATION_STATEMENTS (53)
+    on left: 6 7, on right: 4 5 6
+DECLARATION_STATEMENT (54)
+    on left: 8, on right: 6 7
+VAR_LIST (55)
+    on left: 9 10 11 12, on right: 8 9
+MAIN_TYPE (56)
+    on left: 13, on right: 1
+DATA_TYPE (57)
+    on left: 14 15 16 17, on right: 8
+PROGRAM_STATEMENTS (58)
+    on left: 18 19, on right: 4 5 18 43 44
+PROGRAM_STATEMENT (59)
+    on left: 20 21 22 23 24, on right: 18 19 36 37 41
+FUNCTION (60)
+    on left: 25 26, on right: 24
+READ (61)
+    on left: 27 28 29 30, on right: 25
+WRITE (62)
+    on left: 31 32 33 34, on right: 26
+PLACEHOLDER (63)
+    on left: 35, on right: 27 28 29 30 31 32 33 34
+CONDITIONAL (64)
+    on left: 36 37 38, on right: 22
+LOOP (65)
+    on left: 39 40 41, on right: 23
+LOOP_BODY (66)
+    on left: 42 43 44, on right: 38 39 40 41
+CLOG_EXPN (67)
+    on left: 45 46, on right: 36 37 38 39 40 41
+BCMP (68)
+    on left: 47 48, on right: 45
+SLOG_EXPN (69)
+    on left: 49 50 51, on right: 45 46 49
+BLOG (70)
+    on left: 52 53 54 55 56 57, on right: 50 51
+A_EXPN (71)
+    on left: 58 59 60 61 62 63 64 65 66 67 68 69 70, on right: 20 21
+    41 58 59 60 61 62 63 64 65 66
+
+
+State 0
+
+    0 $accept: . PROGRAM $end
+
+    HEADER  shift, and go to state 1
+
+    PROGRAM  go to state 2
+    HEADERS  go to state 3
+
+
+State 1
+
+    2 HEADERS: HEADER . HEADERS
+    3        | HEADER .
+
+    HEADER  shift, and go to state 1
+
+    $default  reduce using rule 3 (HEADERS)
+
+    HEADERS  go to state 4
+
+
+State 2
+
+    0 $accept: PROGRAM . $end
+
+    $end  shift, and go to state 5
+
+
+State 3
+
+    1 PROGRAM: HEADERS . MAIN_TYPE MAIN LB RB LCB BODY RCB
+
+    INT  shift, and go to state 6
+
+    MAIN_TYPE  go to state 7
+
+
+State 4
+
+    2 HEADERS: HEADER HEADERS .
+
+    $default  reduce using rule 2 (HEADERS)
+
+
+State 5
+
+    0 $accept: PROGRAM $end .
+
+    $default  accept
+
+
+State 6
+
+   13 MAIN_TYPE: INT .
+
+    $default  reduce using rule 13 (MAIN_TYPE)
+
+
+State 7
+
+    1 PROGRAM: HEADERS MAIN_TYPE . MAIN LB RB LCB BODY RCB
+
+    MAIN  shift, and go to state 8
+
+
+State 8
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN . LB RB LCB BODY RCB
+
+    LB  shift, and go to state 9
+
+
+State 9
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB . RB LCB BODY RCB
+
+    RB  shift, and go to state 10
+
+
+State 10
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB RB . LCB BODY RCB
+
+    LCB  shift, and go to state 11
+
+
+State 11
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB RB LCB . BODY RCB
+
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 16
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+
+
+State 12
+
+   14 DATA_TYPE: INT .
+
+    $default  reduce using rule 14 (DATA_TYPE)
+
+
+State 13
+
+   15 DATA_TYPE: CHAR .
+
+    $default  reduce using rule 15 (DATA_TYPE)
+
+
+State 14
+
+   16 DATA_TYPE: FLOAT .
+
+    $default  reduce using rule 16 (DATA_TYPE)
+
+
+State 15
+
+   17 DATA_TYPE: DOUBLE .
+
+    $default  reduce using rule 17 (DATA_TYPE)
+
+
+State 16
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB RB LCB BODY . RCB
+
+    RCB  shift, and go to state 20
+
+
+State 17
+
+    4 BODY: DECLARATION_STATEMENTS . PROGRAM_STATEMENTS BODY
+    5     | DECLARATION_STATEMENTS . PROGRAM_STATEMENTS
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+
+    PROGRAM_STATEMENTS  go to state 29
+    PROGRAM_STATEMENT   go to state 30
+    FUNCTION            go to state 31
+    READ                go to state 32
+    WRITE               go to state 33
+    CONDITIONAL         go to state 34
+    LOOP                go to state 35
+
+
+State 18
+
+    6 DECLARATION_STATEMENTS: DECLARATION_STATEMENT . DECLARATION_STATEMENTS
+    7                       | DECLARATION_STATEMENT .
+
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    $default  reduce using rule 7 (DECLARATION_STATEMENTS)
+
+    DECLARATION_STATEMENTS  go to state 36
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+
+
+State 19
+
+    8 DECLARATION_STATEMENT: DATA_TYPE . VAR_LIST SC
+
+    VAR  shift, and go to state 37
+
+    VAR_LIST  go to state 38
+
+
+State 20
+
+    1 PROGRAM: HEADERS MAIN_TYPE MAIN LB RB LCB BODY RCB .
+
+    $default  reduce using rule 1 (PROGRAM)
+
+
+State 21
+
+   20 PROGRAM_STATEMENT: VAR . LSB NUM RSB EQ A_EXPN SC
+   21                  | VAR . EQ A_EXPN SC
+
+    LSB  shift, and go to state 39
+    EQ   shift, and go to state 40
+
+
+State 22
+
+   27 READ: SCANF . LB PLACEHOLDER COMA AND VAR LSB NUM RSB RB SC
+   28     | SCANF . LB PLACEHOLDER COMA AND VAR LSB VAR RSB RB SC
+   29     | SCANF . LB PLACEHOLDER COMA VAR RB SC
+   30     | SCANF . LB PLACEHOLDER COMA AND VAR RB SC
+
+    LB  shift, and go to state 41
+
+
+State 23
+
+   31 WRITE: PRINTF . LB PLACEHOLDER COMA VAR LSB NUM RSB RB SC
+   32      | PRINTF . LB PLACEHOLDER COMA VAR LSB VAR RSB RB SC
+   33      | PRINTF . LB PLACEHOLDER COMA VAR RB SC
+   34      | PRINTF . LB PLACEHOLDER RB SC
+
+    LB  shift, and go to state 42
+
+
+State 24
+
+   38 CONDITIONAL: LB . CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    CLOG_EXPN  go to state 45
+    SLOG_EXPN  go to state 46
+
+
+State 25
+
+   36 CONDITIONAL: IF . LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF . LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB
+
+    LB  shift, and go to state 47
+
+
+State 26
+
+   39 LOOP: WHILE . LB CLOG_EXPN RB LCB LOOP_BODY RCB
+
+    LB  shift, and go to state 48
+
+
+State 27
+
+   40 LOOP: DO . LCB LOOP_BODY RCB WHILE LB CLOG_EXPN RB
+
+    LCB  shift, and go to state 49
+
+
+State 28
+
+   41 LOOP: FOR . LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY RCB
+
+    LB  shift, and go to state 50
+
+
+State 29
+
+    4 BODY: DECLARATION_STATEMENTS PROGRAM_STATEMENTS . BODY
+    5     | DECLARATION_STATEMENTS PROGRAM_STATEMENTS .
+
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    $default  reduce using rule 5 (BODY)
+
+    BODY                    go to state 51
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+
+
+State 30
+
+   18 PROGRAM_STATEMENTS: PROGRAM_STATEMENT . PROGRAM_STATEMENTS
+   19                   | PROGRAM_STATEMENT .
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+
+    $default  reduce using rule 19 (PROGRAM_STATEMENTS)
+
+    PROGRAM_STATEMENTS  go to state 52
+    PROGRAM_STATEMENT   go to state 30
+    FUNCTION            go to state 31
+    READ                go to state 32
+    WRITE               go to state 33
+    CONDITIONAL         go to state 34
+    LOOP                go to state 35
+
+
+State 31
+
+   24 PROGRAM_STATEMENT: FUNCTION .
+
+    $default  reduce using rule 24 (PROGRAM_STATEMENT)
+
+
+State 32
+
+   25 FUNCTION: READ .
+
+    $default  reduce using rule 25 (FUNCTION)
+
+
+State 33
+
+   26 FUNCTION: WRITE .
+
+    $default  reduce using rule 26 (FUNCTION)
+
+
+State 34
+
+   22 PROGRAM_STATEMENT: CONDITIONAL .
+
+    $default  reduce using rule 22 (PROGRAM_STATEMENT)
+
+
+State 35
+
+   23 PROGRAM_STATEMENT: LOOP .
+
+    $default  reduce using rule 23 (PROGRAM_STATEMENT)
+
+
+State 36
+
+    6 DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS .
+
+    $default  reduce using rule 6 (DECLARATION_STATEMENTS)
+
+
+State 37
+
+    9 VAR_LIST: VAR . COMA VAR_LIST
+   10         | VAR . LSB NUM RSB
+   11         | VAR . LSB VAR RSB
+   12         | VAR .
+
+    LSB   shift, and go to state 53
+    COMA  shift, and go to state 54
+
+    $default  reduce using rule 12 (VAR_LIST)
+
+
+State 38
+
+    8 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST . SC
+
+    SC  shift, and go to state 55
+
+
+State 39
+
+   20 PROGRAM_STATEMENT: VAR LSB . NUM RSB EQ A_EXPN SC
+
+    NUM  shift, and go to state 56
+
+
+State 40
+
+   21 PROGRAM_STATEMENT: VAR EQ . A_EXPN SC
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 60
+
+
+State 41
+
+   27 READ: SCANF LB . PLACEHOLDER COMA AND VAR LSB NUM RSB RB SC
+   28     | SCANF LB . PLACEHOLDER COMA AND VAR LSB VAR RSB RB SC
+   29     | SCANF LB . PLACEHOLDER COMA VAR RB SC
+   30     | SCANF LB . PLACEHOLDER COMA AND VAR RB SC
+
+    LITERAL  shift, and go to state 61
+
+    PLACEHOLDER  go to state 62
+
+
+State 42
+
+   31 WRITE: PRINTF LB . PLACEHOLDER COMA VAR LSB NUM RSB RB SC
+   32      | PRINTF LB . PLACEHOLDER COMA VAR LSB VAR RSB RB SC
+   33      | PRINTF LB . PLACEHOLDER COMA VAR RB SC
+   34      | PRINTF LB . PLACEHOLDER RB SC
+
+    LITERAL  shift, and go to state 61
+
+    PLACEHOLDER  go to state 63
+
+
+State 43
+
+   50 SLOG_EXPN: VAR . BLOG VAR
+   51          | VAR . BLOG NUM
+
+    LT   shift, and go to state 64
+    GT   shift, and go to state 65
+    LTE  shift, and go to state 66
+    GTE  shift, and go to state 67
+    NEQ  shift, and go to state 68
+    LEQ  shift, and go to state 69
+
+    BLOG  go to state 70
+
+
+State 44
+
+   49 SLOG_EXPN: NOT . LB SLOG_EXPN RB
+
+    LB  shift, and go to state 71
+
+
+State 45
+
+   38 CONDITIONAL: LB CLOG_EXPN . RB QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+    RB  shift, and go to state 72
+
+
+State 46
+
+   45 CLOG_EXPN: SLOG_EXPN . BCMP SLOG_EXPN
+   46          | SLOG_EXPN .
+
+    LAND  shift, and go to state 73
+    LOR   shift, and go to state 74
+
+    $default  reduce using rule 46 (CLOG_EXPN)
+
+    BCMP  go to state 75
+
+
+State 47
+
+   36 CONDITIONAL: IF LB . CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB . CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    CLOG_EXPN  go to state 76
+    SLOG_EXPN  go to state 46
+
+
+State 48
+
+   39 LOOP: WHILE LB . CLOG_EXPN RB LCB LOOP_BODY RCB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    CLOG_EXPN  go to state 77
+    SLOG_EXPN  go to state 46
+
+
+State 49
+
+   40 LOOP: DO LCB . LOOP_BODY RCB WHILE LB CLOG_EXPN RB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 78
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+    PROGRAM_STATEMENTS      go to state 79
+    PROGRAM_STATEMENT       go to state 30
+    FUNCTION                go to state 31
+    READ                    go to state 32
+    WRITE                   go to state 33
+    CONDITIONAL             go to state 34
+    LOOP                    go to state 35
+    LOOP_BODY               go to state 80
+
+
+State 50
+
+   41 LOOP: FOR LB . PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+
+    PROGRAM_STATEMENT  go to state 81
+    FUNCTION           go to state 31
+    READ               go to state 32
+    WRITE              go to state 33
+    CONDITIONAL        go to state 34
+    LOOP               go to state 35
+
+
+State 51
+
+    4 BODY: DECLARATION_STATEMENTS PROGRAM_STATEMENTS BODY .
+
+    $default  reduce using rule 4 (BODY)
+
+
+State 52
+
+   18 PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS .
+
+    $default  reduce using rule 18 (PROGRAM_STATEMENTS)
+
+
+State 53
+
+   10 VAR_LIST: VAR LSB . NUM RSB
+   11         | VAR LSB . VAR RSB
+
+    VAR  shift, and go to state 82
+    NUM  shift, and go to state 83
+
+
+State 54
+
+    9 VAR_LIST: VAR COMA . VAR_LIST
+
+    VAR  shift, and go to state 37
+
+    VAR_LIST  go to state 84
+
+
+State 55
+
+    8 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST SC .
+
+    $default  reduce using rule 8 (DECLARATION_STATEMENT)
+
+
+State 56
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM . RSB EQ A_EXPN SC
+
+    RSB  shift, and go to state 85
+
+
+State 57
+
+   68 A_EXPN: VAR . LSB NUM RSB
+   69       | VAR . LSB VAR RSB
+   70       | VAR .
+
+    LSB  shift, and go to state 86
+
+    $default  reduce using rule 70 (A_EXPN)
+
+
+State 58
+
+   67 A_EXPN: NUM .
+
+    $default  reduce using rule 67 (A_EXPN)
+
+
+State 59
+
+   66 A_EXPN: LB . A_EXPN RB
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 87
+
+
+State 60
+
+   21 PROGRAM_STATEMENT: VAR EQ A_EXPN . SC
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    SC      shift, and go to state 88
+    PLUS    shift, and go to state 89
+    MINUS   shift, and go to state 90
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+
+State 61
+
+   35 PLACEHOLDER: LITERAL .
+
+    $default  reduce using rule 35 (PLACEHOLDER)
+
+
+State 62
+
+   27 READ: SCANF LB PLACEHOLDER . COMA AND VAR LSB NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER . COMA AND VAR LSB VAR RSB RB SC
+   29     | SCANF LB PLACEHOLDER . COMA VAR RB SC
+   30     | SCANF LB PLACEHOLDER . COMA AND VAR RB SC
+
+    COMA  shift, and go to state 97
+
+
+State 63
+
+   31 WRITE: PRINTF LB PLACEHOLDER . COMA VAR LSB NUM RSB RB SC
+   32      | PRINTF LB PLACEHOLDER . COMA VAR LSB VAR RSB RB SC
+   33      | PRINTF LB PLACEHOLDER . COMA VAR RB SC
+   34      | PRINTF LB PLACEHOLDER . RB SC
+
+    RB    shift, and go to state 98
+    COMA  shift, and go to state 99
+
+
+State 64
+
+   55 BLOG: LT .
+
+    $default  reduce using rule 55 (BLOG)
+
+
+State 65
+
+   54 BLOG: GT .
+
+    $default  reduce using rule 54 (BLOG)
+
+
+State 66
+
+   53 BLOG: LTE .
+
+    $default  reduce using rule 53 (BLOG)
+
+
+State 67
+
+   52 BLOG: GTE .
+
+    $default  reduce using rule 52 (BLOG)
+
+
+State 68
+
+   56 BLOG: NEQ .
+
+    $default  reduce using rule 56 (BLOG)
+
+
+State 69
+
+   57 BLOG: LEQ .
+
+    $default  reduce using rule 57 (BLOG)
+
+
+State 70
+
+   50 SLOG_EXPN: VAR BLOG . VAR
+   51          | VAR BLOG . NUM
+
+    VAR  shift, and go to state 100
+    NUM  shift, and go to state 101
+
+
+State 71
+
+   49 SLOG_EXPN: NOT LB . SLOG_EXPN RB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    SLOG_EXPN  go to state 102
+
+
+State 72
+
+   38 CONDITIONAL: LB CLOG_EXPN RB . QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+    QUES  shift, and go to state 103
+
+
+State 73
+
+   47 BCMP: LAND .
+
+    $default  reduce using rule 47 (BCMP)
+
+
+State 74
+
+   48 BCMP: LOR .
+
+    $default  reduce using rule 48 (BCMP)
+
+
+State 75
+
+   45 CLOG_EXPN: SLOG_EXPN BCMP . SLOG_EXPN
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    SLOG_EXPN  go to state 104
+
+
+State 76
+
+   36 CONDITIONAL: IF LB CLOG_EXPN . RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN . RB LCB PROGRAM_STATEMENT RCB
+
+    RB  shift, and go to state 105
+
+
+State 77
+
+   39 LOOP: WHILE LB CLOG_EXPN . RB LCB LOOP_BODY RCB
+
+    RB  shift, and go to state 106
+
+
+State 78
+
+   42 LOOP_BODY: BODY .
+
+    $default  reduce using rule 42 (LOOP_BODY)
+
+
+State 79
+
+   43 LOOP_BODY: PROGRAM_STATEMENTS . BODY
+   44          | PROGRAM_STATEMENTS .
+
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    $default  reduce using rule 44 (LOOP_BODY)
+
+    BODY                    go to state 107
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+
+
+State 80
+
+   40 LOOP: DO LCB LOOP_BODY . RCB WHILE LB CLOG_EXPN RB
+
+    RCB  shift, and go to state 108
+
+
+State 81
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT . CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY RCB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    CLOG_EXPN  go to state 109
+    SLOG_EXPN  go to state 46
+
+
+State 82
+
+   11 VAR_LIST: VAR LSB VAR . RSB
+
+    RSB  shift, and go to state 110
+
+
+State 83
+
+   10 VAR_LIST: VAR LSB NUM . RSB
+
+    RSB  shift, and go to state 111
+
+
+State 84
+
+    9 VAR_LIST: VAR COMA VAR_LIST .
+
+    $default  reduce using rule 9 (VAR_LIST)
+
+
+State 85
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM RSB . EQ A_EXPN SC
+
+    EQ  shift, and go to state 112
+
+
+State 86
+
+   68 A_EXPN: VAR LSB . NUM RSB
+   69       | VAR LSB . VAR RSB
+
+    VAR  shift, and go to state 113
+    NUM  shift, and go to state 114
+
+
+State 87
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+   66       | LB A_EXPN . RB
+
+    RB      shift, and go to state 115
+    PLUS    shift, and go to state 89
+    MINUS   shift, and go to state 90
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+
+State 88
+
+   21 PROGRAM_STATEMENT: VAR EQ A_EXPN SC .
+
+    $default  reduce using rule 21 (PROGRAM_STATEMENT)
+
+
+State 89
+
+   58 A_EXPN: A_EXPN PLUS . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 116
+
+
+State 90
+
+   59 A_EXPN: A_EXPN MINUS . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 117
+
+
+State 91
+
+   60 A_EXPN: A_EXPN MUL . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 118
+
+
+State 92
+
+   61 A_EXPN: A_EXPN DIV . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 119
+
+
+State 93
+
+   63 A_EXPN: A_EXPN EXP . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 120
+
+
+State 94
+
+   64 A_EXPN: A_EXPN UPLUS .
+
+    $default  reduce using rule 64 (A_EXPN)
+
+
+State 95
+
+   65 A_EXPN: A_EXPN UMINUS .
+
+    $default  reduce using rule 65 (A_EXPN)
+
+
+State 96
+
+   62 A_EXPN: A_EXPN MOD . A_EXPN
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 121
+
+
+State 97
+
+   27 READ: SCANF LB PLACEHOLDER COMA . AND VAR LSB NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER COMA . AND VAR LSB VAR RSB RB SC
+   29     | SCANF LB PLACEHOLDER COMA . VAR RB SC
+   30     | SCANF LB PLACEHOLDER COMA . AND VAR RB SC
+
+    VAR  shift, and go to state 122
+    AND  shift, and go to state 123
+
+
+State 98
+
+   34 WRITE: PRINTF LB PLACEHOLDER RB . SC
+
+    SC  shift, and go to state 124
+
+
+State 99
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA . VAR LSB NUM RSB RB SC
+   32      | PRINTF LB PLACEHOLDER COMA . VAR LSB VAR RSB RB SC
+   33      | PRINTF LB PLACEHOLDER COMA . VAR RB SC
+
+    VAR  shift, and go to state 125
+
+
+State 100
+
+   50 SLOG_EXPN: VAR BLOG VAR .
+
+    $default  reduce using rule 50 (SLOG_EXPN)
+
+
+State 101
+
+   51 SLOG_EXPN: VAR BLOG NUM .
+
+    $default  reduce using rule 51 (SLOG_EXPN)
+
+
+State 102
+
+   49 SLOG_EXPN: NOT LB SLOG_EXPN . RB
+
+    RB  shift, and go to state 126
+
+
+State 103
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES . LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+    LCB  shift, and go to state 127
+
+
+State 104
+
+   45 CLOG_EXPN: SLOG_EXPN BCMP SLOG_EXPN .
+
+    $default  reduce using rule 45 (CLOG_EXPN)
+
+
+State 105
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB . LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN RB . LCB PROGRAM_STATEMENT RCB
+
+    LCB  shift, and go to state 128
+
+
+State 106
+
+   39 LOOP: WHILE LB CLOG_EXPN RB . LCB LOOP_BODY RCB
+
+    LCB  shift, and go to state 129
+
+
+State 107
+
+   43 LOOP_BODY: PROGRAM_STATEMENTS BODY .
+
+    $default  reduce using rule 43 (LOOP_BODY)
+
+
+State 108
+
+   40 LOOP: DO LCB LOOP_BODY RCB . WHILE LB CLOG_EXPN RB
+
+    WHILE  shift, and go to state 130
+
+
+State 109
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN . SC A_EXPN RB LCB LOOP_BODY RCB
+
+    SC  shift, and go to state 131
+
+
+State 110
+
+   11 VAR_LIST: VAR LSB VAR RSB .
+
+    $default  reduce using rule 11 (VAR_LIST)
+
+
+State 111
+
+   10 VAR_LIST: VAR LSB NUM RSB .
+
+    $default  reduce using rule 10 (VAR_LIST)
+
+
+State 112
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM RSB EQ . A_EXPN SC
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 132
+
+
+State 113
+
+   69 A_EXPN: VAR LSB VAR . RSB
+
+    RSB  shift, and go to state 133
+
+
+State 114
+
+   68 A_EXPN: VAR LSB NUM . RSB
+
+    RSB  shift, and go to state 134
+
+
+State 115
+
+   66 A_EXPN: LB A_EXPN RB .
+
+    $default  reduce using rule 66 (A_EXPN)
+
+
+State 116
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   58       | A_EXPN PLUS A_EXPN .
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+    $default  reduce using rule 58 (A_EXPN)
+
+
+State 117
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   59       | A_EXPN MINUS A_EXPN .
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+    $default  reduce using rule 59 (A_EXPN)
+
+
+State 118
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   60       | A_EXPN MUL A_EXPN .
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+
+    $default  reduce using rule 60 (A_EXPN)
+
+
+State 119
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   61       | A_EXPN DIV A_EXPN .
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+
+    $default  reduce using rule 61 (A_EXPN)
+
+
+State 120
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   63       | A_EXPN EXP A_EXPN .
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+
+    $default  reduce using rule 63 (A_EXPN)
+
+
+State 121
+
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   62       | A_EXPN MOD A_EXPN .
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+
+    $default  reduce using rule 62 (A_EXPN)
+
+
+State 122
+
+   29 READ: SCANF LB PLACEHOLDER COMA VAR . RB SC
+
+    RB  shift, and go to state 135
+
+
+State 123
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND . VAR LSB NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER COMA AND . VAR LSB VAR RSB RB SC
+   30     | SCANF LB PLACEHOLDER COMA AND . VAR RB SC
+
+    VAR  shift, and go to state 136
+
+
+State 124
+
+   34 WRITE: PRINTF LB PLACEHOLDER RB SC .
+
+    $default  reduce using rule 34 (WRITE)
+
+
+State 125
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR . LSB NUM RSB RB SC
+   32      | PRINTF LB PLACEHOLDER COMA VAR . LSB VAR RSB RB SC
+   33      | PRINTF LB PLACEHOLDER COMA VAR . RB SC
+
+    RB   shift, and go to state 137
+    LSB  shift, and go to state 138
+
+
+State 126
+
+   49 SLOG_EXPN: NOT LB SLOG_EXPN RB .
+
+    $default  reduce using rule 49 (SLOG_EXPN)
+
+
+State 127
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB . LOOP_BODY RCB COLN LCB LOOP_BODY RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 78
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+    PROGRAM_STATEMENTS      go to state 79
+    PROGRAM_STATEMENT       go to state 30
+    FUNCTION                go to state 31
+    READ                    go to state 32
+    WRITE                   go to state 33
+    CONDITIONAL             go to state 34
+    LOOP                    go to state 35
+    LOOP_BODY               go to state 139
+
+
+State 128
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB . PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN RB LCB . PROGRAM_STATEMENT RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+
+    PROGRAM_STATEMENT  go to state 140
+    FUNCTION           go to state 31
+    READ               go to state 32
+    WRITE              go to state 33
+    CONDITIONAL        go to state 34
+    LOOP               go to state 35
+
+
+State 129
+
+   39 LOOP: WHILE LB CLOG_EXPN RB LCB . LOOP_BODY RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 78
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+    PROGRAM_STATEMENTS      go to state 79
+    PROGRAM_STATEMENT       go to state 30
+    FUNCTION                go to state 31
+    READ                    go to state 32
+    WRITE                   go to state 33
+    CONDITIONAL             go to state 34
+    LOOP                    go to state 35
+    LOOP_BODY               go to state 141
+
+
+State 130
+
+   40 LOOP: DO LCB LOOP_BODY RCB WHILE . LB CLOG_EXPN RB
+
+    LB  shift, and go to state 142
+
+
+State 131
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC . A_EXPN RB LCB LOOP_BODY RCB
+
+    VAR  shift, and go to state 57
+    NUM  shift, and go to state 58
+    LB   shift, and go to state 59
+
+    A_EXPN  go to state 143
+
+
+State 132
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM RSB EQ A_EXPN . SC
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    SC      shift, and go to state 144
+    PLUS    shift, and go to state 89
+    MINUS   shift, and go to state 90
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+
+State 133
+
+   69 A_EXPN: VAR LSB VAR RSB .
+
+    $default  reduce using rule 69 (A_EXPN)
+
+
+State 134
+
+   68 A_EXPN: VAR LSB NUM RSB .
+
+    $default  reduce using rule 68 (A_EXPN)
+
+
+State 135
+
+   29 READ: SCANF LB PLACEHOLDER COMA VAR RB . SC
+
+    SC  shift, and go to state 145
+
+
+State 136
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR . LSB NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER COMA AND VAR . LSB VAR RSB RB SC
+   30     | SCANF LB PLACEHOLDER COMA AND VAR . RB SC
+
+    RB   shift, and go to state 146
+    LSB  shift, and go to state 147
+
+
+State 137
+
+   33 WRITE: PRINTF LB PLACEHOLDER COMA VAR RB . SC
+
+    SC  shift, and go to state 148
+
+
+State 138
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB . NUM RSB RB SC
+   32      | PRINTF LB PLACEHOLDER COMA VAR LSB . VAR RSB RB SC
+
+    VAR  shift, and go to state 149
+    NUM  shift, and go to state 150
+
+
+State 139
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY . RCB COLN LCB LOOP_BODY RCB
+
+    RCB  shift, and go to state 151
+
+
+State 140
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT . RCB ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT . RCB
+
+    RCB  shift, and go to state 152
+
+
+State 141
+
+   39 LOOP: WHILE LB CLOG_EXPN RB LCB LOOP_BODY . RCB
+
+    RCB  shift, and go to state 153
+
+
+State 142
+
+   40 LOOP: DO LCB LOOP_BODY RCB WHILE LB . CLOG_EXPN RB
+
+    VAR  shift, and go to state 43
+    NOT  shift, and go to state 44
+
+    CLOG_EXPN  go to state 154
+    SLOG_EXPN  go to state 46
+
+
+State 143
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN . RB LCB LOOP_BODY RCB
+   58 A_EXPN: A_EXPN . PLUS A_EXPN
+   59       | A_EXPN . MINUS A_EXPN
+   60       | A_EXPN . MUL A_EXPN
+   61       | A_EXPN . DIV A_EXPN
+   62       | A_EXPN . MOD A_EXPN
+   63       | A_EXPN . EXP A_EXPN
+   64       | A_EXPN . UPLUS
+   65       | A_EXPN . UMINUS
+
+    RB      shift, and go to state 155
+    PLUS    shift, and go to state 89
+    MINUS   shift, and go to state 90
+    MUL     shift, and go to state 91
+    DIV     shift, and go to state 92
+    EXP     shift, and go to state 93
+    UPLUS   shift, and go to state 94
+    UMINUS  shift, and go to state 95
+    MOD     shift, and go to state 96
+
+
+State 144
+
+   20 PROGRAM_STATEMENT: VAR LSB NUM RSB EQ A_EXPN SC .
+
+    $default  reduce using rule 20 (PROGRAM_STATEMENT)
+
+
+State 145
+
+   29 READ: SCANF LB PLACEHOLDER COMA VAR RB SC .
+
+    $default  reduce using rule 29 (READ)
+
+
+State 146
+
+   30 READ: SCANF LB PLACEHOLDER COMA AND VAR RB . SC
+
+    SC  shift, and go to state 156
+
+
+State 147
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB . NUM RSB RB SC
+   28     | SCANF LB PLACEHOLDER COMA AND VAR LSB . VAR RSB RB SC
+
+    VAR  shift, and go to state 157
+    NUM  shift, and go to state 158
+
+
+State 148
+
+   33 WRITE: PRINTF LB PLACEHOLDER COMA VAR RB SC .
+
+    $default  reduce using rule 33 (WRITE)
+
+
+State 149
+
+   32 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB VAR . RSB RB SC
+
+    RSB  shift, and go to state 159
+
+
+State 150
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB NUM . RSB RB SC
+
+    RSB  shift, and go to state 160
+
+
+State 151
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB . COLN LCB LOOP_BODY RCB
+
+    COLN  shift, and go to state 161
+
+
+State 152
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB . ELSE LCB PROGRAM_STATEMENT RCB
+   37            | IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB .
+
+    ELSE  shift, and go to state 162
+
+    $default  reduce using rule 37 (CONDITIONAL)
+
+
+State 153
+
+   39 LOOP: WHILE LB CLOG_EXPN RB LCB LOOP_BODY RCB .
+
+    $default  reduce using rule 39 (LOOP)
+
+
+State 154
+
+   40 LOOP: DO LCB LOOP_BODY RCB WHILE LB CLOG_EXPN . RB
+
+    RB  shift, and go to state 163
+
+
+State 155
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB . LCB LOOP_BODY RCB
+
+    LCB  shift, and go to state 164
+
+
+State 156
+
+   30 READ: SCANF LB PLACEHOLDER COMA AND VAR RB SC .
+
+    $default  reduce using rule 30 (READ)
+
+
+State 157
+
+   28 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB VAR . RSB RB SC
+
+    RSB  shift, and go to state 165
+
+
+State 158
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB NUM . RSB RB SC
+
+    RSB  shift, and go to state 166
+
+
+State 159
+
+   32 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB VAR RSB . RB SC
+
+    RB  shift, and go to state 167
+
+
+State 160
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB NUM RSB . RB SC
+
+    RB  shift, and go to state 168
+
+
+State 161
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN . LCB LOOP_BODY RCB
+
+    LCB  shift, and go to state 169
+
+
+State 162
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE . LCB PROGRAM_STATEMENT RCB
+
+    LCB  shift, and go to state 170
+
+
+State 163
+
+   40 LOOP: DO LCB LOOP_BODY RCB WHILE LB CLOG_EXPN RB .
+
+    $default  reduce using rule 40 (LOOP)
+
+
+State 164
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB . LOOP_BODY RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 78
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+    PROGRAM_STATEMENTS      go to state 79
+    PROGRAM_STATEMENT       go to state 30
+    FUNCTION                go to state 31
+    READ                    go to state 32
+    WRITE                   go to state 33
+    CONDITIONAL             go to state 34
+    LOOP                    go to state 35
+    LOOP_BODY               go to state 171
+
+
+State 165
+
+   28 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB VAR RSB . RB SC
+
+    RB  shift, and go to state 172
+
+
+State 166
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB NUM RSB . RB SC
+
+    RB  shift, and go to state 173
+
+
+State 167
+
+   32 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB VAR RSB RB . SC
+
+    SC  shift, and go to state 174
+
+
+State 168
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB NUM RSB RB . SC
+
+    SC  shift, and go to state 175
+
+
+State 169
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN LCB . LOOP_BODY RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+    INT     shift, and go to state 12
+    CHAR    shift, and go to state 13
+    FLOAT   shift, and go to state 14
+    DOUBLE  shift, and go to state 15
+
+    BODY                    go to state 78
+    DECLARATION_STATEMENTS  go to state 17
+    DECLARATION_STATEMENT   go to state 18
+    DATA_TYPE               go to state 19
+    PROGRAM_STATEMENTS      go to state 79
+    PROGRAM_STATEMENT       go to state 30
+    FUNCTION                go to state 31
+    READ                    go to state 32
+    WRITE                   go to state 33
+    CONDITIONAL             go to state 34
+    LOOP                    go to state 35
+    LOOP_BODY               go to state 176
+
+
+State 170
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB . PROGRAM_STATEMENT RCB
+
+    VAR     shift, and go to state 21
+    SCANF   shift, and go to state 22
+    PRINTF  shift, and go to state 23
+    LB      shift, and go to state 24
+    IF      shift, and go to state 25
+    WHILE   shift, and go to state 26
+    DO      shift, and go to state 27
+    FOR     shift, and go to state 28
+
+    PROGRAM_STATEMENT  go to state 177
+    FUNCTION           go to state 31
+    READ               go to state 32
+    WRITE              go to state 33
+    CONDITIONAL        go to state 34
+    LOOP               go to state 35
+
+
+State 171
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY . RCB
+
+    RCB  shift, and go to state 178
+
+
+State 172
+
+   28 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB VAR RSB RB . SC
+
+    SC  shift, and go to state 179
+
+
+State 173
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB NUM RSB RB . SC
+
+    SC  shift, and go to state 180
+
+
+State 174
+
+   32 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB VAR RSB RB SC .
+
+    $default  reduce using rule 32 (WRITE)
+
+
+State 175
+
+   31 WRITE: PRINTF LB PLACEHOLDER COMA VAR LSB NUM RSB RB SC .
+
+    $default  reduce using rule 31 (WRITE)
+
+
+State 176
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY . RCB
+
+    RCB  shift, and go to state 181
+
+
+State 177
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT . RCB
+
+    RCB  shift, and go to state 182
+
+
+State 178
+
+   41 LOOP: FOR LB PROGRAM_STATEMENT CLOG_EXPN SC A_EXPN RB LCB LOOP_BODY RCB .
+
+    $default  reduce using rule 41 (LOOP)
+
+
+State 179
+
+   28 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB VAR RSB RB SC .
+
+    $default  reduce using rule 28 (READ)
+
+
+State 180
+
+   27 READ: SCANF LB PLACEHOLDER COMA AND VAR LSB NUM RSB RB SC .
+
+    $default  reduce using rule 27 (READ)
+
+
+State 181
+
+   38 CONDITIONAL: LB CLOG_EXPN RB QUES LCB LOOP_BODY RCB COLN LCB LOOP_BODY RCB .
+
+    $default  reduce using rule 38 (CONDITIONAL)
+
+
+State 182
+
+   36 CONDITIONAL: IF LB CLOG_EXPN RB LCB PROGRAM_STATEMENT RCB ELSE LCB PROGRAM_STATEMENT RCB .
+
+    $default  reduce using rule 36 (CONDITIONAL)

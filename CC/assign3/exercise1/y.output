@@ -1,0 +1,69 @@
+   0  $accept : prm $end
+
+   1  prm : HEADER INT MAIN LB RB LCB RCB
+
+state 0
+	$accept : . prm $end  (0)
+
+	HEADER  shift 1
+	.  error
+
+	prm  goto 2
+
+
+state 1
+	prm : HEADER . INT MAIN LB RB LCB RCB  (1)
+
+	INT  shift 3
+	.  error
+
+
+state 2
+	$accept : prm . $end  (0)
+
+	$end  accept
+
+
+state 3
+	prm : HEADER INT . MAIN LB RB LCB RCB  (1)
+
+	MAIN  shift 4
+	.  error
+
+
+state 4
+	prm : HEADER INT MAIN . LB RB LCB RCB  (1)
+
+	LB  shift 5
+	.  error
+
+
+state 5
+	prm : HEADER INT MAIN LB . RB LCB RCB  (1)
+
+	RB  shift 6
+	.  error
+
+
+state 6
+	prm : HEADER INT MAIN LB RB . LCB RCB  (1)
+
+	LCB  shift 7
+	.  error
+
+
+state 7
+	prm : HEADER INT MAIN LB RB LCB . RCB  (1)
+
+	RCB  shift 8
+	.  error
+
+
+state 8
+	prm : HEADER INT MAIN LB RB LCB RCB .  (1)
+
+	.  reduce 1
+
+
+14 terminals, 2 nonterminals
+2 grammar rules, 9 states

@@ -1,0 +1,45 @@
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.002939311    XiaomiEl_4e:b1:6b     IntelCor_54:ac:ef     ARP      42     192.168.1.1 is at 50:64:2b:4e:b1:6b
+
+Frame 2: 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 16, 2020 22:11:26.169545790 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584376886.169545790 seconds
+    [Time delta from previous captured frame: 0.002939311 seconds]
+    [Time delta from previous displayed frame: 0.002939311 seconds]
+    [Time since reference or first frame: 0.002939311 seconds]
+    Frame Number: 2
+    Frame Length: 42 bytes (336 bits)
+    Capture Length: 42 bytes (336 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:arp]
+    [Coloring Rule Name: ARP]
+    [Coloring Rule String: arp]
+Ethernet II, Src: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b), Dst: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+    Destination: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: ARP (0x0806)
+Address Resolution Protocol (reply)
+    Hardware type: Ethernet (1)
+    Protocol type: IPv4 (0x0800)
+    Hardware size: 6
+    Protocol size: 4
+    Opcode: reply (2)
+    Sender MAC address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+    Sender IP address: 192.168.1.1
+    Target MAC address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+    Target IP address: 192.168.1.142
+
+0000  7c 67 a2 54 ac ef 50 64 2b 4e b1 6b 08 06 00 01   |g.T..Pd+N.k....
+0010  08 00 06 04 00 02 50 64 2b 4e b1 6b c0 a8 01 01   ......Pd+N.k....
+0020  7c 67 a2 54 ac ef c0 a8 01 8e                     |g.T......

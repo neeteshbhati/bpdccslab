@@ -1,0 +1,28 @@
+PDA
+2017A7PS0060U
+Empty Stack // Final State or Empty Stack, this line is not case-sensitive
+a b c // Input Alphabet: alphabet is CASE-SENSITIVE
+a b c Z // Stack Alphabet: alphabet is CASE-SENSITIVE
+Z // Stack Start Symbol
+q0 q1 q2 q3 q4 q5 q6 q7 q8 // Machine states (strings): note: alphabet and states are CASE-SENSITIVE
+q0 // Start State
+q3 q7 // Set of Final States--can be empty, in which case language is empty or machine accepts by Empty Stack.
+q0 \ Z q1 Z // transitions: input state, tape symbol, stack symbol, output state, stack output
+q0 \ Z q4 Z
+q1 a Z q1 aZ 
+q1 a a q1 aa
+q1 \ a q2 a
+q1 \ Z q2 Z
+q2 b a q2 \
+q2 \ Z q3 Z
+q3 c Z q3 Z
+q3 \ Z q3 \
+q4 a Z q4 Z
+q4 \ Z q5 Z
+q5 b Z q5 bZ
+q5 b b q5 bb
+q5 \ b q6 b
+q5 \ Z q6 Z
+q6 c b q6 \
+q6 \ Z q7 \
+end // required, this line is not case-sensitive

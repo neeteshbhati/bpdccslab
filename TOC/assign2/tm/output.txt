@@ -1,0 +1,9 @@
+
+TITLE: NEW MACHINE 
+
+ INPUT: 0001   YES 
+ INPUT: 0010   YES 
+ INPUT: 01000   YES 
+ INPUT: 0111   YES 
+
+Another Machine? Y/N 

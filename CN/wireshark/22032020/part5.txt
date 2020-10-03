@@ -1,0 +1,680 @@
+No.     Time           Source                Destination           Protocol Length Info
+     20 2.566139798    192.168.1.142         128.119.245.12        HTTP     545    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1 
+
+Frame 20: 545 bytes on wire (4360 bits), 545 bytes captured (4360 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:55:47.539462830 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584887147.539462830 seconds
+    [Time delta from previous captured frame: 0.000525919 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 2.566139798 seconds]
+    Frame Number: 20
+    Frame Length: 545 bytes (4360 bits)
+    Capture Length: 545 bytes (4360 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef), Dst: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+    Destination: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.142, Dst: 128.119.245.12
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 531
+    Identification: 0xbe10 (48656)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0x431a [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.1.142
+    Destination: 128.119.245.12
+Transmission Control Protocol, Src Port: 57382, Dst Port: 80, Seq: 1, Ack: 1, Len: 479
+    Source Port: 57382
+    Destination Port: 80
+    [Stream index: 2]
+    [TCP Segment Len: 479]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 480    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 502
+    [Calculated window size: 64256]
+    [Window size scaling factor: 128]
+    Checksum: 0xa9e8 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 2246241525, TSecr 284673880
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 2246241525
+            Timestamp echo reply: 284673880
+    [SEQ/ACK analysis]
+        [iRTT: 0.317613070 seconds]
+        [Bytes in flight: 479]
+        [Bytes sent since last PSH flag: 479]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.318138989 seconds]
+        [Time since previous frame in this TCP stream: 0.000525919 seconds]
+    TCP payload (479 bytes)
+Hypertext Transfer Protocol
+    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/protected_pages/HTTP-wireshark-file5.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    dpr: 1\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: en-US,en;q=0.9\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]
+    [HTTP request 1/1]
+    [Response in frame: 28]
+TRANSUM RTE Data
+    [RTE Status: OK]
+    [Req First Seg: 20]
+    [Req Last Seg: 20]
+    [Rsp First Seg: 28]
+    [Rsp Last Seg: 28]
+    [APDU Rsp Time: 0.327347354 seconds]
+    [Service Time: 0.327347354 seconds]
+    [Req Spread: 0.000000000 seconds]
+    [Rsp Spread: 0.000000000 seconds]
+    [Trace clip filter: tcp.stream==2 && frame.number>=20 && frame.number<=28 && tcp.len>0]
+    [Calculation: Generic TCP]
+
+0000  50 64 2b 4e b1 6b 7c 67 a2 54 ac ef 08 00 45 00   Pd+N.k|g.T....E.
+0010  02 13 be 10 40 00 40 06 43 1a c0 a8 01 8e 80 77   ....@.@.C......w
+0020  f5 0c e0 26 00 50 e5 e4 11 a7 0f 3d 24 92 80 18   ...&.P.....=$...
+0030  01 f6 a9 e8 00 00 01 01 08 0a 85 e2 ec f5 10 f7   ................
+0040  c7 58 47 45 54 20 2f 77 69 72 65 73 68 61 72 6b   .XGET /wireshark
+0050  2d 6c 61 62 73 2f 70 72 6f 74 65 63 74 65 64 5f   -labs/protected_
+0060  70 61 67 65 73 2f 48 54 54 50 2d 77 69 72 65 73   pages/HTTP-wires
+0070  68 61 72 6b 2d 66 69 6c 65 35 2e 68 74 6d 6c 20   hark-file5.html 
+0080  48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20   HTTP/1.1..Host: 
+0090  67 61 69 61 2e 63 73 2e 75 6d 61 73 73 2e 65 64   gaia.cs.umass.ed
+00a0  75 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 6b   u..Connection: k
+00b0  65 65 70 2d 61 6c 69 76 65 0d 0a 64 70 72 3a 20   eep-alive..dpr: 
+00c0  31 0d 0a 55 70 67 72 61 64 65 2d 49 6e 73 65 63   1..Upgrade-Insec
+00d0  75 72 65 2d 52 65 71 75 65 73 74 73 3a 20 31 0d   ure-Requests: 1.
+00e0  0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 4d 6f 7a   .User-Agent: Moz
+00f0  69 6c 6c 61 2f 35 2e 30 20 28 58 31 31 3b 20 4c   illa/5.0 (X11; L
+0100  69 6e 75 78 20 78 38 36 5f 36 34 29 20 41 70 70   inux x86_64) App
+0110  6c 65 57 65 62 4b 69 74 2f 35 33 37 2e 33 36 20   leWebKit/537.36 
+0120  28 4b 48 54 4d 4c 2c 20 6c 69 6b 65 20 47 65 63   (KHTML, like Gec
+0130  6b 6f 29 20 43 68 72 6f 6d 65 2f 38 30 2e 30 2e   ko) Chrome/80.0.
+0140  33 39 38 37 2e 31 34 39 20 53 61 66 61 72 69 2f   3987.149 Safari/
+0150  35 33 37 2e 33 36 0d 0a 41 63 63 65 70 74 3a 20   537.36..Accept: 
+0160  74 65 78 74 2f 68 74 6d 6c 2c 61 70 70 6c 69 63   text/html,applic
+0170  61 74 69 6f 6e 2f 78 68 74 6d 6c 2b 78 6d 6c 2c   ation/xhtml+xml,
+0180  61 70 70 6c 69 63 61 74 69 6f 6e 2f 78 6d 6c 3b   application/xml;
+0190  71 3d 30 2e 39 2c 69 6d 61 67 65 2f 77 65 62 70   q=0.9,image/webp
+01a0  2c 69 6d 61 67 65 2f 61 70 6e 67 2c 2a 2f 2a 3b   ,image/apng,*/*;
+01b0  71 3d 30 2e 38 2c 61 70 70 6c 69 63 61 74 69 6f   q=0.8,applicatio
+01c0  6e 2f 73 69 67 6e 65 64 2d 65 78 63 68 61 6e 67   n/signed-exchang
+01d0  65 3b 76 3d 62 33 3b 71 3d 30 2e 39 0d 0a 41 63   e;v=b3;q=0.9..Ac
+01e0  63 65 70 74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67   cept-Encoding: g
+01f0  7a 69 70 2c 20 64 65 66 6c 61 74 65 0d 0a 41 63   zip, deflate..Ac
+0200  63 65 70 74 2d 4c 61 6e 67 75 61 67 65 3a 20 65   cept-Language: e
+0210  6e 2d 55 53 2c 65 6e 3b 71 3d 30 2e 39 0d 0a 0d   n-US,en;q=0.9...
+0220  0a                                                .
+No.     Time           Source                Destination           Protocol Length Info
+     28 2.893487152    128.119.245.12        192.168.1.142         HTTP     783    HTTP/1.1 401 Unauthorized  (text/html)
+
+Frame 28: 783 bytes on wire (6264 bits), 783 bytes captured (6264 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:55:47.866810184 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584887147.866810184 seconds
+    [Time delta from previous captured frame: 0.012275704 seconds]
+    [Time delta from previous displayed frame: 0.327347354 seconds]
+    [Time since reference or first frame: 2.893487152 seconds]
+    Frame Number: 28
+    Frame Length: 783 bytes (6264 bits)
+    Capture Length: 783 bytes (6264 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:data-text-lines]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b), Dst: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+    Destination: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.142
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 769
+    Identification: 0xec07 (60423)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 47
+    Protocol: TCP (6)
+    Header checksum: 0x2535 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 128.119.245.12
+    Destination: 192.168.1.142
+Transmission Control Protocol, Src Port: 80, Dst Port: 57382, Seq: 1, Ack: 480, Len: 717
+    Source Port: 80
+    Destination Port: 57382
+    [Stream index: 2]
+    [TCP Segment Len: 717]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 718    (relative sequence number)]
+    Acknowledgment number: 480    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0x4456 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 284674208, TSecr 2246241525
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 284674208
+            Timestamp echo reply: 2246241525
+    [SEQ/ACK analysis]
+        [iRTT: 0.317613070 seconds]
+        [Bytes in flight: 717]
+        [Bytes sent since last PSH flag: 717]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.645486343 seconds]
+        [Time since previous frame in this TCP stream: 0.012275704 seconds]
+    TCP payload (717 bytes)
+Hypertext Transfer Protocol
+    HTTP/1.1 401 Unauthorized\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 401 Unauthorized\r\n]
+            [HTTP/1.1 401 Unauthorized\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Response Version: HTTP/1.1
+        Status Code: 401
+        [Status Code Description: Unauthorized]
+        Response Phrase: Unauthorized
+    Date: Sun, 22 Mar 2020 14:25:47 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 mod_perl/2.0.11 Perl/v5.16.3\r\n
+    WWW-Authenticate: Basic realm="wireshark-students only"\r\n
+    Content-Length: 381\r\n
+        [Content length: 381]
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.327347354 seconds]
+    [Request in frame: 20]
+    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]
+    File Data: 381 bytes
+Line-based text data: text/html (12 lines)
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n
+    <html><head>\n
+    <title>401 Unauthorized</title>\n
+    </head><body>\n
+    <h1>Unauthorized</h1>\n
+    <p>This server could not verify that you\n
+    are authorized to access the document\n
+    requested.  Either you supplied the wrong\n
+    credentials (e.g., bad password), or your\n
+    browser doesn't understand how to supply\n
+    the credentials required.</p>\n
+    </body></html>\n
+
+0000  7c 67 a2 54 ac ef 50 64 2b 4e b1 6b 08 00 45 00   |g.T..Pd+N.k..E.
+0010  03 01 ec 07 40 00 2f 06 25 35 80 77 f5 0c c0 a8   ....@./.%5.w....
+0020  01 8e 00 50 e0 26 0f 3d 24 92 e5 e4 13 86 80 18   ...P.&.=$.......
+0030  00 eb 44 56 00 00 01 01 08 0a 10 f7 c8 a0 85 e2   ..DV............
+0040  ec f5 48 54 54 50 2f 31 2e 31 20 34 30 31 20 55   ..HTTP/1.1 401 U
+0050  6e 61 75 74 68 6f 72 69 7a 65 64 0d 0a 44 61 74   nauthorized..Dat
+0060  65 3a 20 53 75 6e 2c 20 32 32 20 4d 61 72 20 32   e: Sun, 22 Mar 2
+0070  30 32 30 20 31 34 3a 32 35 3a 34 37 20 47 4d 54   020 14:25:47 GMT
+0080  0d 0a 53 65 72 76 65 72 3a 20 41 70 61 63 68 65   ..Server: Apache
+0090  2f 32 2e 34 2e 36 20 28 43 65 6e 74 4f 53 29 20   /2.4.6 (CentOS) 
+00a0  4f 70 65 6e 53 53 4c 2f 31 2e 30 2e 32 6b 2d 66   OpenSSL/1.0.2k-f
+00b0  69 70 73 20 50 48 50 2f 35 2e 34 2e 31 36 20 6d   ips PHP/5.4.16 m
+00c0  6f 64 5f 70 65 72 6c 2f 32 2e 30 2e 31 31 20 50   od_perl/2.0.11 P
+00d0  65 72 6c 2f 76 35 2e 31 36 2e 33 0d 0a 57 57 57   erl/v5.16.3..WWW
+00e0  2d 41 75 74 68 65 6e 74 69 63 61 74 65 3a 20 42   -Authenticate: B
+00f0  61 73 69 63 20 72 65 61 6c 6d 3d 22 77 69 72 65   asic realm="wire
+0100  73 68 61 72 6b 2d 73 74 75 64 65 6e 74 73 20 6f   shark-students o
+0110  6e 6c 79 22 0d 0a 43 6f 6e 74 65 6e 74 2d 4c 65   nly"..Content-Le
+0120  6e 67 74 68 3a 20 33 38 31 0d 0a 4b 65 65 70 2d   ngth: 381..Keep-
+0130  41 6c 69 76 65 3a 20 74 69 6d 65 6f 75 74 3d 35   Alive: timeout=5
+0140  2c 20 6d 61 78 3d 31 30 30 0d 0a 43 6f 6e 6e 65   , max=100..Conne
+0150  63 74 69 6f 6e 3a 20 4b 65 65 70 2d 41 6c 69 76   ction: Keep-Aliv
+0160  65 0d 0a 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a   e..Content-Type:
+0170  20 74 65 78 74 2f 68 74 6d 6c 3b 20 63 68 61 72    text/html; char
+0180  73 65 74 3d 69 73 6f 2d 38 38 35 39 2d 31 0d 0a   set=iso-8859-1..
+0190  0d 0a 3c 21 44 4f 43 54 59 50 45 20 48 54 4d 4c   ..<!DOCTYPE HTML
+01a0  20 50 55 42 4c 49 43 20 22 2d 2f 2f 49 45 54 46    PUBLIC "-//IETF
+01b0  2f 2f 44 54 44 20 48 54 4d 4c 20 32 2e 30 2f 2f   //DTD HTML 2.0//
+01c0  45 4e 22 3e 0a 3c 68 74 6d 6c 3e 3c 68 65 61 64   EN">.<html><head
+01d0  3e 0a 3c 74 69 74 6c 65 3e 34 30 31 20 55 6e 61   >.<title>401 Una
+01e0  75 74 68 6f 72 69 7a 65 64 3c 2f 74 69 74 6c 65   uthorized</title
+01f0  3e 0a 3c 2f 68 65 61 64 3e 3c 62 6f 64 79 3e 0a   >.</head><body>.
+0200  3c 68 31 3e 55 6e 61 75 74 68 6f 72 69 7a 65 64   <h1>Unauthorized
+0210  3c 2f 68 31 3e 0a 3c 70 3e 54 68 69 73 20 73 65   </h1>.<p>This se
+0220  72 76 65 72 20 63 6f 75 6c 64 20 6e 6f 74 20 76   rver could not v
+0230  65 72 69 66 79 20 74 68 61 74 20 79 6f 75 0a 61   erify that you.a
+0240  72 65 20 61 75 74 68 6f 72 69 7a 65 64 20 74 6f   re authorized to
+0250  20 61 63 63 65 73 73 20 74 68 65 20 64 6f 63 75    access the docu
+0260  6d 65 6e 74 0a 72 65 71 75 65 73 74 65 64 2e 20   ment.requested. 
+0270  20 45 69 74 68 65 72 20 79 6f 75 20 73 75 70 70    Either you supp
+0280  6c 69 65 64 20 74 68 65 20 77 72 6f 6e 67 0a 63   lied the wrong.c
+0290  72 65 64 65 6e 74 69 61 6c 73 20 28 65 2e 67 2e   redentials (e.g.
+02a0  2c 20 62 61 64 20 70 61 73 73 77 6f 72 64 29 2c   , bad password),
+02b0  20 6f 72 20 79 6f 75 72 0a 62 72 6f 77 73 65 72    or your.browser
+02c0  20 64 6f 65 73 6e 27 74 20 75 6e 64 65 72 73 74    doesn't underst
+02d0  61 6e 64 20 68 6f 77 20 74 6f 20 73 75 70 70 6c   and how to suppl
+02e0  79 0a 74 68 65 20 63 72 65 64 65 6e 74 69 61 6c   y.the credential
+02f0  73 20 72 65 71 75 69 72 65 64 2e 3c 2f 70 3e 0a   s required.</p>.
+0300  3c 2f 62 6f 64 79 3e 3c 2f 68 74 6d 6c 3e 0a      </body></html>.
+No.     Time           Source                Destination           Protocol Length Info
+     42 9.582157512    192.168.1.142         128.119.245.12        HTTP     622    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1 
+
+Frame 42: 622 bytes on wire (4976 bits), 622 bytes captured (4976 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:55:54.555480544 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584887154.555480544 seconds
+    [Time delta from previous captured frame: 0.001218923 seconds]
+    [Time delta from previous displayed frame: 6.688670360 seconds]
+    [Time since reference or first frame: 9.582157512 seconds]
+    Frame Number: 42
+    Frame Length: 622 bytes (4976 bits)
+    Capture Length: 622 bytes (4976 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef), Dst: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+    Destination: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.142, Dst: 128.119.245.12
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 608
+    Identification: 0xc146 (49478)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0x3f97 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.1.142
+    Destination: 128.119.245.12
+Transmission Control Protocol, Src Port: 57384, Dst Port: 80, Seq: 1, Ack: 1, Len: 556
+    Source Port: 57384
+    Destination Port: 80
+    [Stream index: 3]
+    [TCP Segment Len: 556]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 557    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 502
+    [Calculated window size: 64256]
+    [Window size scaling factor: 128]
+    Checksum: 0x4f7f [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 2246248541, TSecr 284674134
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 2246248541
+            Timestamp echo reply: 284674134
+    [SEQ/ACK analysis]
+        [iRTT: 0.366682295 seconds]
+        [Bytes in flight: 556]
+        [Bytes sent since last PSH flag: 556]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 7.083661769 seconds]
+        [Time since previous frame in this TCP stream: 6.716979474 seconds]
+    TCP payload (556 bytes)
+Hypertext Transfer Protocol
+    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/protected_pages/HTTP-wireshark-file5.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Cache-Control: max-age=0\r\n
+    Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n
+        Credentials: wireshark-students:network
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: en-US,en;q=0.9\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]
+    [HTTP request 1/1]
+    [Response in frame: 45]
+TRANSUM RTE Data
+    [RTE Status: OK]
+    [Req First Seg: 42]
+    [Req Last Seg: 42]
+    [Rsp First Seg: 45]
+    [Rsp Last Seg: 45]
+    [APDU Rsp Time: 0.351209497 seconds]
+    [Service Time: 0.351209497 seconds]
+    [Req Spread: 0.000000000 seconds]
+    [Rsp Spread: 0.000000000 seconds]
+    [Trace clip filter: tcp.stream==3 && frame.number>=42 && frame.number<=45 && tcp.len>0]
+    [Calculation: Generic TCP]
+
+0000  50 64 2b 4e b1 6b 7c 67 a2 54 ac ef 08 00 45 00   Pd+N.k|g.T....E.
+0010  02 60 c1 46 40 00 40 06 3f 97 c0 a8 01 8e 80 77   .`.F@.@.?......w
+0020  f5 0c e0 28 00 50 7a 30 97 02 11 f6 a7 1c 80 18   ...(.Pz0........
+0030  01 f6 4f 7f 00 00 01 01 08 0a 85 e3 08 5d 10 f7   ..O..........]..
+0040  c8 56 47 45 54 20 2f 77 69 72 65 73 68 61 72 6b   .VGET /wireshark
+0050  2d 6c 61 62 73 2f 70 72 6f 74 65 63 74 65 64 5f   -labs/protected_
+0060  70 61 67 65 73 2f 48 54 54 50 2d 77 69 72 65 73   pages/HTTP-wires
+0070  68 61 72 6b 2d 66 69 6c 65 35 2e 68 74 6d 6c 20   hark-file5.html 
+0080  48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20   HTTP/1.1..Host: 
+0090  67 61 69 61 2e 63 73 2e 75 6d 61 73 73 2e 65 64   gaia.cs.umass.ed
+00a0  75 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 6b   u..Connection: k
+00b0  65 65 70 2d 61 6c 69 76 65 0d 0a 43 61 63 68 65   eep-alive..Cache
+00c0  2d 43 6f 6e 74 72 6f 6c 3a 20 6d 61 78 2d 61 67   -Control: max-ag
+00d0  65 3d 30 0d 0a 41 75 74 68 6f 72 69 7a 61 74 69   e=0..Authorizati
+00e0  6f 6e 3a 20 42 61 73 69 63 20 64 32 6c 79 5a 58   on: Basic d2lyZX
+00f0  4e 6f 59 58 4a 72 4c 58 4e 30 64 57 52 6c 62 6e   NoYXJrLXN0dWRlbn
+0100  52 7a 4f 6d 35 6c 64 48 64 76 63 6d 73 3d 0d 0a   RzOm5ldHdvcms=..
+0110  55 70 67 72 61 64 65 2d 49 6e 73 65 63 75 72 65   Upgrade-Insecure
+0120  2d 52 65 71 75 65 73 74 73 3a 20 31 0d 0a 55 73   -Requests: 1..Us
+0130  65 72 2d 41 67 65 6e 74 3a 20 4d 6f 7a 69 6c 6c   er-Agent: Mozill
+0140  61 2f 35 2e 30 20 28 58 31 31 3b 20 4c 69 6e 75   a/5.0 (X11; Linu
+0150  78 20 78 38 36 5f 36 34 29 20 41 70 70 6c 65 57   x x86_64) AppleW
+0160  65 62 4b 69 74 2f 35 33 37 2e 33 36 20 28 4b 48   ebKit/537.36 (KH
+0170  54 4d 4c 2c 20 6c 69 6b 65 20 47 65 63 6b 6f 29   TML, like Gecko)
+0180  20 43 68 72 6f 6d 65 2f 38 30 2e 30 2e 33 39 38    Chrome/80.0.398
+0190  37 2e 31 34 39 20 53 61 66 61 72 69 2f 35 33 37   7.149 Safari/537
+01a0  2e 33 36 0d 0a 41 63 63 65 70 74 3a 20 74 65 78   .36..Accept: tex
+01b0  74 2f 68 74 6d 6c 2c 61 70 70 6c 69 63 61 74 69   t/html,applicati
+01c0  6f 6e 2f 78 68 74 6d 6c 2b 78 6d 6c 2c 61 70 70   on/xhtml+xml,app
+01d0  6c 69 63 61 74 69 6f 6e 2f 78 6d 6c 3b 71 3d 30   lication/xml;q=0
+01e0  2e 39 2c 69 6d 61 67 65 2f 77 65 62 70 2c 69 6d   .9,image/webp,im
+01f0  61 67 65 2f 61 70 6e 67 2c 2a 2f 2a 3b 71 3d 30   age/apng,*/*;q=0
+0200  2e 38 2c 61 70 70 6c 69 63 61 74 69 6f 6e 2f 73   .8,application/s
+0210  69 67 6e 65 64 2d 65 78 63 68 61 6e 67 65 3b 76   igned-exchange;v
+0220  3d 62 33 3b 71 3d 30 2e 39 0d 0a 41 63 63 65 70   =b3;q=0.9..Accep
+0230  74 2d 45 6e 63 6f 64 69 6e 67 3a 20 67 7a 69 70   t-Encoding: gzip
+0240  2c 20 64 65 66 6c 61 74 65 0d 0a 41 63 63 65 70   , deflate..Accep
+0250  74 2d 4c 61 6e 67 75 61 67 65 3a 20 65 6e 2d 55   t-Language: en-U
+0260  53 2c 65 6e 3b 71 3d 30 2e 39 0d 0a 0d 0a         S,en;q=0.9....
+No.     Time           Source                Destination           Protocol Length Info
+     45 9.933367009    128.119.245.12        192.168.1.142         HTTP     556    HTTP/1.1 200 OK  (text/html)
+
+Frame 45: 556 bytes on wire (4448 bits), 556 bytes captured (4448 bits) on interface 0
+    Interface id: 0 (wlp2s0)
+        Interface name: wlp2s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar 22, 2020 19:55:54.906690041 IST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1584887154.906690041 seconds
+    [Time delta from previous captured frame: 0.000034723 seconds]
+    [Time delta from previous displayed frame: 0.351209497 seconds]
+    [Time since reference or first frame: 9.933367009 seconds]
+    Frame Number: 45
+    Frame Length: 556 bytes (4448 bits)
+    Capture Length: 556 bytes (4448 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:data-text-lines]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b), Dst: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+    Destination: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        Address: IntelCor_54:ac:ef (7c:67:a2:54:ac:ef)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        Address: XiaomiEl_4e:b1:6b (50:64:2b:4e:b1:6b)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.142
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 542
+    Identification: 0x431f (17183)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 47
+    Protocol: TCP (6)
+    Header checksum: 0xcf00 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 128.119.245.12
+    Destination: 192.168.1.142
+Transmission Control Protocol, Src Port: 80, Dst Port: 57384, Seq: 1, Ack: 557, Len: 490
+    Source Port: 80
+    Destination Port: 57384
+    [Stream index: 3]
+    [TCP Segment Len: 490]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 491    (relative sequence number)]
+    Acknowledgment number: 557    (relative ack number)
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0x7bc7 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 284681219, TSecr 2246248541
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 284681219
+            Timestamp echo reply: 2246248541
+    [SEQ/ACK analysis]
+        [iRTT: 0.366682295 seconds]
+        [Bytes in flight: 490]
+        [Bytes sent since last PSH flag: 490]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 7.434871266 seconds]
+        [Time since previous frame in this TCP stream: 0.000034723 seconds]
+    TCP payload (490 bytes)
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+            [HTTP/1.1 200 OK\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Response Version: HTTP/1.1
+        Status Code: 200
+        [Status Code Description: OK]
+        Response Phrase: OK
+    Date: Sun, 22 Mar 2020 14:25:54 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 mod_perl/2.0.11 Perl/v5.16.3\r\n
+    Last-Modified: Sun, 22 Mar 2020 05:59:02 GMT\r\n
+    ETag: "84-5a16b372965ef"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 132\r\n
+        [Content length: 132]
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.351209497 seconds]
+    [Request in frame: 42]
+    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]
+    File Data: 132 bytes
+Line-based text data: text/html (6 lines)
+    \n
+    <html>\n
+    \n
+    This page is password protected!  If you're seeing this, you've downloaded the page correctly <br>\n
+    Congratulations!\n
+    </html>
+
+0000  7c 67 a2 54 ac ef 50 64 2b 4e b1 6b 08 00 45 00   |g.T..Pd+N.k..E.
+0010  02 1e 43 1f 40 00 2f 06 cf 00 80 77 f5 0c c0 a8   ..C.@./....w....
+0020  01 8e 00 50 e0 28 11 f6 a7 1c 7a 30 99 2e 80 18   ...P.(....z0....
+0030  00 eb 7b c7 00 00 01 01 08 0a 10 f7 e4 03 85 e3   ..{.............
+0040  08 5d 48 54 54 50 2f 31 2e 31 20 32 30 30 20 4f   .]HTTP/1.1 200 O
+0050  4b 0d 0a 44 61 74 65 3a 20 53 75 6e 2c 20 32 32   K..Date: Sun, 22
+0060  20 4d 61 72 20 32 30 32 30 20 31 34 3a 32 35 3a    Mar 2020 14:25:
+0070  35 34 20 47 4d 54 0d 0a 53 65 72 76 65 72 3a 20   54 GMT..Server: 
+0080  41 70 61 63 68 65 2f 32 2e 34 2e 36 20 28 43 65   Apache/2.4.6 (Ce
+0090  6e 74 4f 53 29 20 4f 70 65 6e 53 53 4c 2f 31 2e   ntOS) OpenSSL/1.
+00a0  30 2e 32 6b 2d 66 69 70 73 20 50 48 50 2f 35 2e   0.2k-fips PHP/5.
+00b0  34 2e 31 36 20 6d 6f 64 5f 70 65 72 6c 2f 32 2e   4.16 mod_perl/2.
+00c0  30 2e 31 31 20 50 65 72 6c 2f 76 35 2e 31 36 2e   0.11 Perl/v5.16.
+00d0  33 0d 0a 4c 61 73 74 2d 4d 6f 64 69 66 69 65 64   3..Last-Modified
+00e0  3a 20 53 75 6e 2c 20 32 32 20 4d 61 72 20 32 30   : Sun, 22 Mar 20
+00f0  32 30 20 30 35 3a 35 39 3a 30 32 20 47 4d 54 0d   20 05:59:02 GMT.
+0100  0a 45 54 61 67 3a 20 22 38 34 2d 35 61 31 36 62   .ETag: "84-5a16b
+0110  33 37 32 39 36 35 65 66 22 0d 0a 41 63 63 65 70   372965ef"..Accep
+0120  74 2d 52 61 6e 67 65 73 3a 20 62 79 74 65 73 0d   t-Ranges: bytes.
+0130  0a 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74 68 3a   .Content-Length:
+0140  20 31 33 32 0d 0a 4b 65 65 70 2d 41 6c 69 76 65    132..Keep-Alive
+0150  3a 20 74 69 6d 65 6f 75 74 3d 35 2c 20 6d 61 78   : timeout=5, max
+0160  3d 31 30 30 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e   =100..Connection
+0170  3a 20 4b 65 65 70 2d 41 6c 69 76 65 0d 0a 43 6f   : Keep-Alive..Co
+0180  6e 74 65 6e 74 2d 54 79 70 65 3a 20 74 65 78 74   ntent-Type: text
+0190  2f 68 74 6d 6c 3b 20 63 68 61 72 73 65 74 3d 55   /html; charset=U
+01a0  54 46 2d 38 0d 0a 0d 0a 0a 3c 68 74 6d 6c 3e 0a   TF-8.....<html>.
+01b0  0a 54 68 69 73 20 70 61 67 65 20 69 73 20 70 61   .This page is pa
+01c0  73 73 77 6f 72 64 20 70 72 6f 74 65 63 74 65 64   ssword protected
+01d0  21 20 20 49 66 20 79 6f 75 27 72 65 20 73 65 65   !  If you're see
+01e0  69 6e 67 20 74 68 69 73 2c 20 79 6f 75 27 76 65   ing this, you've
+01f0  20 64 6f 77 6e 6c 6f 61 64 65 64 20 74 68 65 20    downloaded the 
+0200  70 61 67 65 20 63 6f 72 72 65 63 74 6c 79 20 3c   page correctly <
+0210  62 72 3e 0a 43 6f 6e 67 72 61 74 75 6c 61 74 69   br>.Congratulati
+0220  6f 6e 73 21 0a 3c 2f 68 74 6d 6c 3e               ons!.</html>

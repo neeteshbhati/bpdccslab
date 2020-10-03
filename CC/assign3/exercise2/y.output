@@ -1,0 +1,158 @@
+   0  $accept : prm $end
+
+   1  prm : HEADER INT MAIN LB RB LCB BODY RCB
+
+   2  BODY : DECLARATION_STATEMENTS
+
+   3  DECLARATION_STATEMENTS : DECLARATION_STATEMENT DECLARATION_STATEMENTS
+   4                         | DECLARATION_STATEMENT
+
+   5  DECLARATION_STATEMENT : INT VAR_LIST SC
+
+   6  VAR_LIST : VAR COMA VAR_LIST
+   7           | VAR
+
+state 0
+	$accept : . prm $end  (0)
+
+	HEADER  shift 1
+	.  error
+
+	prm  goto 2
+
+
+state 1
+	prm : HEADER . INT MAIN LB RB LCB BODY RCB  (1)
+
+	INT  shift 3
+	.  error
+
+
+state 2
+	$accept : prm . $end  (0)
+
+	$end  accept
+
+
+state 3
+	prm : HEADER INT . MAIN LB RB LCB BODY RCB  (1)
+
+	MAIN  shift 4
+	.  error
+
+
+state 4
+	prm : HEADER INT MAIN . LB RB LCB BODY RCB  (1)
+
+	LB  shift 5
+	.  error
+
+
+state 5
+	prm : HEADER INT MAIN LB . RB LCB BODY RCB  (1)
+
+	RB  shift 6
+	.  error
+
+
+state 6
+	prm : HEADER INT MAIN LB RB . LCB BODY RCB  (1)
+
+	LCB  shift 7
+	.  error
+
+
+state 7
+	prm : HEADER INT MAIN LB RB LCB . BODY RCB  (1)
+
+	INT  shift 8
+	.  error
+
+	BODY  goto 9
+	DECLARATION_STATEMENTS  goto 10
+	DECLARATION_STATEMENT  goto 11
+
+
+state 8
+	DECLARATION_STATEMENT : INT . VAR_LIST SC  (5)
+
+	VAR  shift 12
+	.  error
+
+	VAR_LIST  goto 13
+
+
+state 9
+	prm : HEADER INT MAIN LB RB LCB BODY . RCB  (1)
+
+	RCB  shift 14
+	.  error
+
+
+state 10
+	BODY : DECLARATION_STATEMENTS .  (2)
+
+	.  reduce 2
+
+
+state 11
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT . DECLARATION_STATEMENTS  (3)
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT .  (4)
+
+	INT  shift 8
+	RCB  reduce 4
+
+	DECLARATION_STATEMENTS  goto 15
+	DECLARATION_STATEMENT  goto 11
+
+
+state 12
+	VAR_LIST : VAR . COMA VAR_LIST  (6)
+	VAR_LIST : VAR .  (7)
+
+	COMA  shift 16
+	SC  reduce 7
+
+
+state 13
+	DECLARATION_STATEMENT : INT VAR_LIST . SC  (5)
+
+	SC  shift 17
+	.  error
+
+
+state 14
+	prm : HEADER INT MAIN LB RB LCB BODY RCB .  (1)
+
+	.  reduce 1
+
+
+state 15
+	DECLARATION_STATEMENTS : DECLARATION_STATEMENT DECLARATION_STATEMENTS .  (3)
+
+	.  reduce 3
+
+
+state 16
+	VAR_LIST : VAR COMA . VAR_LIST  (6)
+
+	VAR  shift 12
+	.  error
+
+	VAR_LIST  goto 18
+
+
+state 17
+	DECLARATION_STATEMENT : INT VAR_LIST SC .  (5)
+
+	.  reduce 5
+
+
+state 18
+	VAR_LIST : VAR COMA VAR_LIST .  (6)
+
+	.  reduce 6
+
+
+14 terminals, 6 nonterminals
+8 grammar rules, 19 states

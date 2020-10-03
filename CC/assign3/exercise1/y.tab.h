@@ -1,0 +1,12 @@
+#define SC 257
+#define COMA 258
+#define VAR 259
+#define EQ 260
+#define OP 261
+#define HEADER 262
+#define INT 263
+#define MAIN 264
+#define LB 265
+#define RB 266
+#define LCB 267
+#define RCB 268

@@ -1,0 +1,14 @@
+ Machine read is :pda.txt
+
+TITLE: NEW MACHINE 
+
+
+TITLE: 2017A7PS0060U 
+0 YES 
+1 YES 
+2 YES 
+3 YES 
+4 No more executing PDA threads
+5 No more executing PDA threads
+
+Another Machine? Y/N : 
